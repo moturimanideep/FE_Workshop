@@ -5,7 +5,9 @@ import { AuthModule } from '../app/auth/auth.module';
 
 import { AppComponent } from './app.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AuthModule,
-    WorkshopModule
+    WorkshopModule,
+    MatCardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

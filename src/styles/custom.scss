@@ -41,7 +41,16 @@ a {
 sub {
     color: darkorange!important;
 }
-
+#page-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    position: fixed;
+    padding: 5rem 0rem;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;

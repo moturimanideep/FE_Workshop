@@ -1,3 +1,35 @@
-<p>
-  login works!
-</p>
+<aside style="height:100vh">
+  <main style="background: url(../../../assets/images/site-bg.png) no-repeat center center fixed; background-size: cover;">
+    <div style="position:absolute;top:48%;left:30px;"><h2 style="color:#fff">Digital Lync <br>Welcomes you to</h2></div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height:100vh;margin-right:60px;">
+      <!-- class="row center-xs parent-container padding" -->
+      <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:30%">
+        <mat-card-content>
+          <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+              <form novalidate autocomplete="off">
+                <mat-card style="box-shadow: none;">
+                    <div fxLayout="row wrap" fxLayoutAlign="center end">
+                      <h3 fxFlex="100" class="text-center" style="color:#1b80c3">
+                        Login In
+                      </h3>
+                      <p fxFlex="100" style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540; text-align:center">
+                        Hello there! Sign in and start managing your shipping items
+                      </p>
+                      <mat-form-field fxFlex="100">
+                          <input matInput placeholder="User Name or Email" required>
+                          <mat-hint>
+                            <!-- <form-messages [control]="myForm.controls.auth_userId"></form-messages> -->
+                          </mat-hint>
+                        </mat-form-field>
+                      </div>
+                </mat-card>
+              </form>
+            </div>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+  </main>
+</aside>

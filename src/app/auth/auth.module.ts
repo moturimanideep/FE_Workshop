@@ -6,6 +6,10 @@ import { RegisterComponent } from '../auth/register/register.component';
 import { SetpasswordComponent } from '../auth/setpassword/setpassword.component';
 
 import { AuthService } from '../auth/auth.service';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -17,6 +21,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
   declarations: [
@@ -24,7 +32,7 @@ const routes: Routes = [
     RegisterComponent,
     SetpasswordComponent
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,MatCardModule,FlexLayoutModule,MatFormFieldModule,MatInputModule],
   providers: [AuthService]
 })
 export class AuthModule { }
