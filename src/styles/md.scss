@@ -1,0 +1,72 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$my-app-primary: mat-palette($mat-deep-purple, 700, 800, 900);
+$my-app-accent: mat-palette($mat-orange, 700, 800, 900);
+$my-app-warn: mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+
+
+
+md-divider {
+    display: block;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin: 0;
+    margin-bottom: 8px;
+    margin-top: -8px;
+}
+
+
+.fixed {
+    position: fixed !important;
+}
+
+
+#nav {
+    .mat-list-item-content:hover {
+        color: #fff;
+        background-color: #778594 !important;
+    }
+    .mat-list-item {
+        color: #ffffff !important;
+        background-color: #56677a !important;
+        border-bottom: 0px solid #ccc;
+    }
+}
+.mat-drawer {
+    min-width: unset !important;
+    position: fixed !important;
+    top: 60px !important;
+}
+.mat-tab-group{
+    width: 100%;
+}
+.fab-bottom-right {
+    bottom: 1rem;
+    right: 8px;
+    position: absolute;
+}
+.fab-placeholder {
+    top: 40px !important;
+    right: 6px; 
+    position: absolute;
+    
+}
+.fab-placeholder-left{
+    top: 40px !important;
+    right: 2px; 
+    position: absolute;
+}
+.menu-icon {
+    outline: none !important;
+    cursor: pointer;
+}
+
+.inactive {
+    color: #AFAFAF;
+}
+
+.active {
+    color: #557DBF !important;
+}

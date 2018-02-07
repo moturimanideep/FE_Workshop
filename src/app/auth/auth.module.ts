@@ -8,11 +8,9 @@ import { SetpasswordComponent } from '../auth/setpassword/setpassword.component'
 import { AuthService } from '../auth/auth.service';
 
 const routes: Routes = [
-  { path: 'auth/login', component: LoginComponent},
+  { path: '', component: LoginComponent},
   { path: 'auth/register', component: RegisterComponent },
   { path: 'auth/setpassword', component: SetpasswordComponent }
-
-
 ];
 
 
