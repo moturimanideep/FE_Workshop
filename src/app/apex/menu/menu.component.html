@@ -1,0 +1,12 @@
+<mat-grid-list cols="1" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let item of menuList" style="border-bottom: 1px solid #c6d0da;">
+            <mat-icon
+                class="md-18" 
+                md-list-icon svgIcon="core:{{item.icon}}" 
+                routerLink="{{item.link}}"  routerLinkActive="active-link" class="inactive menu-icon" 
+                 
+                (click)="states.activeItem=item.id">
+                </mat-icon>
+                <a> {{item.name}}  </a>
+    </mat-grid-tile>
+  </mat-grid-list>

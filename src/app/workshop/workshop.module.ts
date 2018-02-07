@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import  { SharedModule } from '../shared/shared.module';
+
 
 import { EditComponent } from '../workshop/profile/edit/edit.component';
 import { ViewComponent } from '../workshop/profile/view/view.component';
@@ -20,7 +22,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, { useHash: true }),
+    SharedModule.forRoot()
   ],
   declarations: [
     EditComponent,

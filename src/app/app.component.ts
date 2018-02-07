@@ -1,10 +1,95 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
+import { MatSidenav } from '@angular/material';
+import { ApexService } from './shared/service/apex.service';
+import { MatIconRegistry } from '@angular/material';
+import { Util } from './shared/utils/util';
+import { AppService } from './shared/service/app.service';
+import { Storage } from './shared/utils/storage';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+  
+  showLoader: boolean = false;
+  private _userSubscription: any;
+  private _loaderSubscription: any;
+  private _menuSubscription: any;
+  concat:string;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  menuLetter: string = 'A';
+  navMode = 'side';
+  showMenu = true;
+  sessionUser: any;
+  username : String;
+  concatString : any = '';
+  menuList: any[] = [];
+  constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
+      this.loadIcons();
+   }
+
+  ngOnInit() {
+    this._loaderSubscription = this.apexService.loaderEvent.subscribe(data => {
+      if (data != this.showLoader) {
+        setTimeout( ()=>{
+          this.showLoader = data;
+        }, 100)
+      }
+    });
+    this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
+      this.sessionUser = Storage.getSessionUser();
+      if(this.sessionUser){
+        if(this.navMode == 'over'){
+          setTimeout( ()=>{
+            if( this.sidenav){
+              this.sidenav.close();
+            }
+          }, 100)
+        }
+        this.menuLetter = this.sessionUser.name.charAt(0);
+        this.apexService.menuEmit(Storage.getMenuList());
+      }
+      
+    });
+    this._menuSubscription = this.apexService.menuEvent.subscribe(data => {
+      if(data) {
+        this.menuList = Object.assign([], data);
+      }
+    });
+
+    if (window.innerWidth < 768) {
+      this.navMode = 'over';
+    } 
+    this.apexService.sessionUserEmit(Storage.getSessionUser());
+   
+  }  
+  loadIcons(){
+        this._iconRegistry.addSvgIconSetInNamespace('core',
+          this.apexService.bypassURL('/assets/icons/app-icons.svg'));
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+        if (event.target.innerWidth < 768) {
+            this.navMode = 'over';
+            if( this.sidenav){
+              this.sidenav.close();
+            }
+           
+        }
+        if (event.target.innerWidth > 768) {
+           this.navMode = 'side';
+           if(this.sidenav){
+            this.sidenav.open();
+           }
+          
+        }
+  }
+  logout(){
+    Storage.clearSession();
+    sessionStorage.clear();
+    this.apexService.sessionUserEmit(null);
+    this.appService.navigate('auth/login', []);
+  }
 }
