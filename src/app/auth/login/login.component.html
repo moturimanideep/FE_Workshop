@@ -1,28 +1,46 @@
 <aside style="height:100vh">
   <main style="background: url(../../../assets/images/site-bg.png) no-repeat center center fixed; background-size: cover;">
+    <h1 class="text-center" style="color:#fff">Full Stack Work Shop</h1>
     <div style="position:absolute;top:48%;left:30px;"><h2 style="color:#fff">Digital Lync <br>Welcomes you to</h2></div>
     <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height:100vh;margin-right:60px;">
       <!-- class="row center-xs parent-container padding" -->
-      <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:30%">
+      <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:28%;height:50%;">
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutAlign="center center">
-            <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+            <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="50">
               <form novalidate autocomplete="off">
                 <mat-card style="box-shadow: none;">
+                    <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center end">
-                      <h3 fxFlex="100" class="text-center" style="color:#1b80c3">
+                      <h3 fxFlex="100" class="text-center" style="color:#1b80c3;padding-bottom: 24px;">
                         Login In
                       </h3>
-                      <p fxFlex="100" style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540; text-align:center">
-                        Hello there! Sign in and start managing your shipping items
+                      <p fxFlex="100" style="font-size: 18px;font-weight: 300;line-height: 1.33;color: #2a3540; text-align:center">
+                        Hello there! Sign in and start your workshops items
                       </p>
-                      <mat-form-field fxFlex="100">
-                          <input matInput placeholder="User Name or Email" required>
-                          <mat-hint>
-                            <!-- <form-messages [control]="myForm.controls.auth_userId"></form-messages> -->
-                          </mat-hint>
-                        </mat-form-field>
+                      <div fxLayout="row wrap" fxLayoutAlign="center end">
+                          <mat-form-field fxFlex="100">
+                            <input matInput placeholder="User Name or Email" required>
+                            <!-- <mat-hint>
+                              <form-messages [control]="myForm.controls.auth_userId"></form-messages>
+                            </mat-hint> -->
+                          </mat-form-field>
+                          <mat-form-field fxFlex="100">
+                            <input matInput required name="password"
+                              placeholder="Enter your password" [type]="hide ? 'text' : 'password'" type="password">
+                            <!-- <mat-icon style="color:black" class="cursor" matSuffix (click)="hide = !hide">
+                              {{hide ? 'visibility' : 'visibility_off'}}
+                            </mat-icon> -->
+                            <!-- <mat-hint>
+                              <form-messages [control]="myForm.controls.auth_password"></form-messages>
+                            </mat-hint> -->
+                          </mat-form-field>
+
+                        </div>
+                        
                       </div>
+                     
+                    </mat-card-content>
                 </mat-card>
               </form>
             </div>
