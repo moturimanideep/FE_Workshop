@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
+  { path: 'auth/signin', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: 'auth/setpassword', component: SetpasswordComponent }
 ];
