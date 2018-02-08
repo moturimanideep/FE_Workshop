@@ -22,15 +22,15 @@ export class MenuComponent implements OnInit {
     // this._menuSubscription = this.apexService.menuEvent.subscribe(data => {
     //     this.roleMenuAccess(data);
     // });
-    this.roleMenuAccess([]);
+    this.roleMenuAccess();
   }
 
-  ngOnChanges(changes: { [key: string]: SimpleChange }) {
-    if (changes.hasOwnProperty('inputData')) {
-          this.roleMenuAccess([]);
-    }
+  // ngOnChanges(changes: { [key: string]: SimpleChange }) {
+  //   if (changes.hasOwnProperty('inputData')) {
+  //         this.roleMenuAccess([]);
+  //   }
 
-  }
+  // }
   ngOnInit() {
     // if (window.innerWidth < 768) {
     //   this.navMode = 'over';
@@ -38,33 +38,28 @@ export class MenuComponent implements OnInit {
     // }
 
   }
-  roleMenuAccess(data: any[]) {
+  roleMenuAccess() {
     this.menuList = [];
-    let id_pre = "";
-    data.forEach( (element: any) => {
-      id_pre = element.grpcode+'_'+element.role+'_';
       this.menus().forEach( (item) => {
-          if(element.id == id_pre+item.id && element.active == true){
             this.menuList.push(item);
             console.log(this.menuList)
-          } 
+          
       })
-    })
   }
 
   menus() {
     return [
       {
-        "id": 'PROFILES',
-        "name": "Profile",
-        "link": "workshop/userprofile",
-        "icon": "profile"
-      },
-      {
-        "id": 'USER_MANAGEMENT',
-        "name": "User Management",
+        "id": 'USERS',
+        "name": "users",
         "link": "workshop/userslist",
         "icon": "user_management"
+      },
+      {
+        "id": 'PROFILES',
+        "name": "profile",
+        "link": "workshop/userprofile",
+        "icon": "profile "
       }
     ]
   }
