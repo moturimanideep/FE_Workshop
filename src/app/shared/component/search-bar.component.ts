@@ -131,13 +131,6 @@ export class SearchBarComponent implements ControlValueAccessor {
     document.getElementById('searchBarId')['value'] = '';
     this.propagateChange('');
   }
-  // inputVal(){
-  //   var getVal = document.getElementById('searchBarId');
-  //   console.log(getVal['value'])
-  //   if(getVal['value'] != ""){
-  //     this.expand = true;
-  //   }
-  // }
 
   @HostListener('document:click', ['$event'])
 
