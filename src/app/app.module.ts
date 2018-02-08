@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkshopModule } from '../app/workshop/workshop.module';
 import { AuthModule } from '../app/auth/auth.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {MatCardModule} from '@angular/material/card';
@@ -29,6 +30,7 @@ import { CommonService} from './service/common.service';
     BrowserAnimationsModule,
     SharedModule.forRoot(),
     HttpClientModule,
+    HttpModule
     
   ],
   providers: [CommonService],

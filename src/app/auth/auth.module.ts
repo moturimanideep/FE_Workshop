@@ -10,6 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import  { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, { useHash: true }),
+    SharedModule.forRoot()
   ],
   declarations: [
     LoginComponent,
