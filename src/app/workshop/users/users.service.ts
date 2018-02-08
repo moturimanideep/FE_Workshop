@@ -29,21 +29,28 @@ export class UserService extends CommonService {
   }
   register(url, data): Observable<any> {
     console.log(data);
-    return this.http.post(url, data )
-      .map(response =>{
-           response.json();
-            this.userDetails = data.info;
+    return this.http.post(url, data)
+      .map(response => {
+        response.json();
+        this.userDetails = data.info;
         // this.setToken(data.message.authToken, data.info.userName);
-         return response.json()
-      }   
-      )    
+        return response.json()
+      }
+      )
   }
+
   getParam(key: string){
     return this.activatedroute.snapshot.queryParams[key];
   }
 
-logout(): void {
-  this.token = null;
-  localStorage.removeItem('currentUser');
-}
+  logout(): void {
+    this.token = null;
+    localStorage.removeItem('currentUser');
+  }
+
+  userSearch(url): Observable<any> {
+    return this.http.get(url)
+      .map(res => res.json())
+
+  }
 }

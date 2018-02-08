@@ -7,25 +7,25 @@
   <main>
 
     <div class="padding-side">
-      <mat-card class="margin-side" (click)="userprofile()">
-          <h3>Tharun Dillikar</h3>
+      <mat-card class="margin-side" *ngFor="let item of userList" (click)="userprofile(item)">
+          <h3>{{item.firstname}}</h3>
         <div fxLayout="row wrap">
           <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
             <div class="hpair">
               <span>Email: </span>
-              <span>Tharundillikar@gmail.com</span>
+              <span>{{item.email}}</span>
             </div>
             <div class="hpair">
-              <span>College: </span>
-              <span>SRM University</span>
+              <span>Mobile: </span>
+              <span>{{item.mobile}}</span>
             </div>
             <div class="hpair">
               <span>City: </span>
               <span>Hyderabad</span>
             </div>
             <div class="hpair">
-              <span>Working Status: </span>
-              <span>Employee</span>
+              <span>Technology: </span>
+              <span>{{item.technology}}</span>
             </div>
           </div>
         </div>

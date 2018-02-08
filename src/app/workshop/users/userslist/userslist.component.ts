@@ -9,12 +9,19 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
   styleUrls: ['./userslist.component.scss']
 })
 export class UserslistComponent implements OnInit {
+userList:any;
+  constructor(private router: Router, private userservice:UserService) { 
 
-  constructor(private router: Router, private userservice:UserService) { }
+    this.userservice.userSearch('http://35.231.75.213:3000/users').subscribe((data)=>{
+      this.userList = data;
+    })
+  }
 
   ngOnInit() {
   }
-  userprofile(){
-    this.router.navigate(['workshop/userprofile'], {queryParams: {id:'1'}});
+  userprofile(item){
+    this.router.navigate(['workshop/userprofile'], {queryParams: {id:item._id}});
   }
+
+
 }
