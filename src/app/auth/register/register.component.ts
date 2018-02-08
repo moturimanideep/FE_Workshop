@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import 'rxjs/add/operator/map'
+import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { AuthService } from '../auth.service';
+import { Register } from '../../apex/entities/register.entity';
 
 @Component({
   selector: 'app-register',
@@ -6,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  RegistrationForm: any;
   workstatus = [
     {value: 'Employee', viewValue: 'Employee'},
     {value: 'Student', viewValue: 'Student'},
@@ -16,7 +24,14 @@ export class RegisterComponent implements OnInit {
     {value: 'Devops', viewValue: 'Devops'},
     
   ];
-  constructor() { }
+  constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
+    this.RegistrationForm = this.formBuilder.group({
+      'firstname': ['', Validators.required],
+      'username': ['', Validators.required],
+      'email': ['', Validators.required],
+      'mobile': ['', Validators.required],
+     });
+  }
 
   ngOnInit() {
   }
