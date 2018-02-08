@@ -20,42 +20,39 @@ import { SearchBarComponent } from './component/search-bar.component';
 import { FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe } from './utils/pipes';
 
 import {
-    MatFormFieldModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatRadioModule, MatSelectModule,
+    MatFormFieldModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule,
     MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
-    MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule, MatExpansionModule,
-    MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, MatAutocompleteModule,
+    MatGridListModule, MatCardModule, MatExpansionModule,
+    MatButtonModule, MatChipsModule, MatIconModule, MatAutocompleteModule,
     MatTooltipModule, MatSnackBarModule,
 } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
-
-
 @NgModule({
     imports: [
         CommonModule, FlexLayoutModule, FormsModule, ReactiveFormsModule,
-        MatFormFieldModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatRadioModule, MatSelectModule,
+        MatFormFieldModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule,
         MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
-        MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule, MatExpansionModule,
-        MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule,
+        MatGridListModule, MatCardModule, MatExpansionModule,
+        MatButtonModule, MatChipsModule, MatIconModule,
         MatTooltipModule, MatSnackBarModule, MatAutocompleteModule,
         ImageCropperModule
 
     ],
     declarations: [
-        FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe,
+        FilterPipe, KeyValuesPipe, DecodeURIPipe, DateTimePipe,
         FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, AppCropImgComponent,
         SearchBarComponent,
     ],
     exports: [
         CommonModule, FormsModule, ReactiveFormsModule, FlexLayoutModule,
-        FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe,
+        FilterPipe, KeyValuesPipe, DecodeURIPipe, DateTimePipe,
         FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent,
-        MatFormFieldModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatRadioModule, MatSelectModule,
+        MatFormFieldModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule,
         MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
-        MatGridListModule, MatCardModule, MatStepperModule, MatTabsModule, MatAutocompleteModule, MatExpansionModule,
-        MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule,
+        MatGridListModule, MatCardModule, MatAutocompleteModule, MatExpansionModule,
+        MatButtonModule, MatChipsModule, MatIconModule,
         MatTooltipModule, MatSnackBarModule,
         AppImgLoadComponent, AppCropImgComponent,
         SearchBarComponent
