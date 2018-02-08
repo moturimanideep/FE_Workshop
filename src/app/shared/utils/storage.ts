@@ -73,15 +73,6 @@ export class Storage {
         sessionStorage.clear();
     }
 
-
-    static setJWT(val : string){
-        if(val){
-           sessionStorage.setItem(this.pid+'-jwt', val);
-        }
-    }
-    static getJWT(){
-        return sessionStorage.getItem(this.pid+'-jwt');
-    }
     static setSessionUser(val : string){
         if(val){
            this.setSessionItem('user', val);
@@ -100,21 +91,9 @@ export class Storage {
         return this.getSessionItem('menu');
     }
 
-    static getBranch(): string{
-        return this.getSessionItem('branch');
-    }
-
-    static setBranch(val : string){
-        if(val){
-           this.setSessionItem('branch', val);
-        }
-    }
-
     static clearSession(): void {
         this.sessionClear();
-        this.removeSessionItem('jwt');
         this.removeSessionItem('user');
         this.removeSessionItem('menu');
-        this.removeSessionItem('branch');
     }
 }

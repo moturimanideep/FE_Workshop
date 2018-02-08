@@ -4,11 +4,7 @@ import {Router, ActivatedRoute, NavigationExtras} from "@angular/router";
 import {ApexService} from "./apex.service";
 import {Storage} from "../utils/storage";
 
-
-
 //import {DomSanitizer} from '@angular/platform-browser';
-
-
 @Injectable()
 export class AppService {
     
@@ -16,7 +12,6 @@ export class AppService {
     constructor(private router: Router, private route: ActivatedRoute,  private apexService: ApexService){
        
     }
-
     navigate(url: String, params: any) {
         console.log("url: "+ url);
         if(params){
@@ -52,17 +47,6 @@ export class AppService {
     isAccess(path: String) {
         return true;
     }
-    
-    //isAccess(path: String){
-    //    let returnValue = false;
-    //    for(let menu of Util.RoleMenu()){
-    //        if(menu.link.toLowerCase() == path.toLowerCase()) {
-    //            returnValue =  true;
-    //            break;
-    //        }
-    //    }
-    //    return returnValue;
-    //}
      getLocalItem(key: string){
         return Storage.getLocalItem(key);
     }
@@ -75,9 +59,6 @@ export class AppService {
      setSessionItem(key: string, value: any){
         return Storage.setSessionItem(key, value);
     }
-    showLoader(show: boolean){
-        this.apexService.showLoader(show);
-    }
     showMessage(message: string) {
         this.apexService.showMessage(message);
     }
@@ -86,9 +67,6 @@ export class AppService {
     }
     menuEmit(data: any){
         this.apexService.menuEmit(data);
-    }
-     getBranch(): any {
-        return Storage.getBranch();
     }
      getSessionUser() {
         return Storage.getSessionUser();
