@@ -13,13 +13,16 @@ userList:any;
   constructor(private router: Router, private userservice:UserService) { 
 
     this.userservice.userSearch('http://35.231.75.213:3000/users').subscribe((data)=>{
+
       this.userList = data;
+      console.log(this.userList)
     })
   }
 
   ngOnInit() {
   }
   userprofile(item){
+    console.log(item._id)
     this.router.navigate(['workshop/userprofile'], {queryParams: {id:item._id}});
   }
 

@@ -7,10 +7,17 @@ import { UserService } from './../users.service';
   styleUrls: ['./userprofile.component.scss']
 })
 export class UserprofileComponent implements OnInit {
-
+  param: any;
+  profileData:any;
   constructor(private userservice: UserService) {
-    console.log(this.userservice.getParam('id'));
-   }
+    this.param = this.userservice.getParam('id');
+    console.log(this.param)
+    this.userservice.searchById('http://35.231.75.213:3000/details?id=' + this.param).subscribe((data) => {
+      console.log(data)
+      this.profileData = data;
+      console.log(this.profileData);
+    });
+  }
 
   ngOnInit() {
   }

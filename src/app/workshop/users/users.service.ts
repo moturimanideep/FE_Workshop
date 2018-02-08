@@ -53,4 +53,10 @@ export class UserService extends CommonService {
       .map(res => res.json())
 
   }
+
+  searchById(url){
+    return this.http.get(url).map(response=>{
+      response.json();
+    })
+  }
 }
