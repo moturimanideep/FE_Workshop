@@ -14,6 +14,7 @@ import { Register } from '../../apex/entities/register.entity';
 })
 export class RegisterComponent implements OnInit {
   RegistrationForm: any;
+register: Register;
   workstatus = [
     {value: 'Employee', viewValue: 'Employee'},
     {value: 'Student', viewValue: 'Student'},
@@ -25,7 +26,8 @@ export class RegisterComponent implements OnInit {
     
   ];
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
-    this.RegistrationForm = this.formBuilder.group({
+    this.register = new Register();
+      this.RegistrationForm = this.formBuilder.group({
       'firstname': ['', Validators.required],
       'username': ['', Validators.required],
       'email': ['', Validators.required],
@@ -35,5 +37,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
+  registerr(){
+    this.authService.register('http://35.231.75.213:3000/register', this.register).subscribe((data)=>{
+      console.log(data);
+    })
+  }
+
 
 }

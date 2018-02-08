@@ -18,29 +18,28 @@
                       <h3 fxFlex="100" class="text-center" style="color:#1b80c3;padding-bottom: 24px;">
                         Registartion Form
                       </h3>
-
                       <div fxLayout="row wrap" fxLayoutAlign="center end">
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="First Name" required>
+                          <input matInput placeholder="First Name" required [(ngModel)]="register.firstname" [ngModelOptions]="{standalone: true}">
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Last Name" required>
+                          <input matInput placeholder="Last Name" required [(ngModel)]="register.lastname" [ngModelOptions]="{standalone: true}">
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Email" required>
+                          <input matInput placeholder="Email" required [(ngModel)]="register.email" [ngModelOptions]="{standalone: true}">
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Mobile" required>
+                          <input matInput placeholder="Mobile" required [(ngModel)]="register.mobile" [ngModelOptions]="{standalone: true}">
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <mat-select placeholder="Work Status">
+                          <mat-select placeholder="Work Status" [(ngModel)]="register.workingstatus" [ngModelOptions]="{standalone: true}">
                             <mat-option *ngFor="let status of workstatus" [value]="status.value">
                               {{ status.viewValue }}
                             </mat-option>
                           </mat-select>
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <mat-select placeholder="Technologies Intrested">
+                          <mat-select placeholder="Technologies Intrested"  [(ngModel)]="register.technologiesintrested" [ngModelOptions]="{standalone: true}">
                             <mat-option *ngFor="let technology of technologies" [value]="technology.value">
                               {{ technology.viewValue }}
                             </mat-option>
@@ -48,7 +47,7 @@
                         </mat-form-field>
                         <div fxFlex="row" fxLayoutAlign="start start">
                           <div fxFlex="100" fxLayoutAlign="center center">
-                            <button type="submit" mat-raised-button class="reg-btn">
+                            <button type="submit" mat-raised-button class="reg-btn" (click)="registerr()">
                               Submit
                             </button>
                           </div>

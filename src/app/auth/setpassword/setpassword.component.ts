@@ -1,15 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import 'rxjs/add/operator/map'
+import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { AuthService } from '../auth.service';
+import { SetPassword } from '../../apex/entities/setpassword.entity';
 @Component({
   selector: 'app-setpassword',
   templateUrl: './setpassword.component.html',
   styleUrls: ['./setpassword.component.scss']
 })
 export class SetpasswordComponent implements OnInit {
-
-  constructor() { }
+  SetPasswordForm: any;
+  setpassword: SetPassword;
+  constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) {
+    this.setpassword = new SetPassword();
+      this.SetPasswordForm = this.formBuilder.group({
+      'email': ['', Validators.required],
+      'password': ['', Validators.required],
+      'confirmpassword': ['', Validators.required],
+     });
+     this.setpassword.email = this.authService.getParam('id')
+     console.log(this.authService.getParam('id'))
+   }
 
   ngOnInit() {
+  }
+  setpasswordd(){
+    this.authService.register('http://35.231.75.213:3000/password', this.setpassword).subscribe((data)=>{
+      console.log(data);
+    })
   }
 
 }
