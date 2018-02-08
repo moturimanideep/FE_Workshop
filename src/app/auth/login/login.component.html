@@ -20,26 +20,15 @@
                       </p>
                       <div fxLayout="row wrap" fxLayoutAlign="center end">
                           <mat-form-field fxFlex="100">
-                            <input matInput placeholder="User Name or Email" required>
-                            <!-- <mat-hint>
-                              <form-messages [control]="myForm.controls.auth_userId"></form-messages>
-                            </mat-hint> -->
+                            <input matInput placeholder="User Name or Email" required [(ngModel)]="login.email">
                           </mat-form-field>
                           <mat-form-field fxFlex="100">
                             <input matInput required name="password"
-                              placeholder="Enter your password" [type]="hide ? 'text' : 'password'" type="password">
-                            <!-- <mat-icon style="color:black" class="cursor" matSuffix (click)="hide = !hide">
-                              {{hide ? 'visibility' : 'visibility_off'}}
-                            </mat-icon> -->
-                            <!-- <mat-hint>
-                              <form-messages [control]="myForm.controls.auth_password"></form-messages>
-                            </mat-hint> -->
+                              placeholder="Enter your password" [type]="hide ? 'text' : 'password'" type="password" [(ngModel)]="login.password">
                           </mat-form-field>
-
-                        </div>
-                        
+                        </div>  
+                        <div class="status" *ngIf="isActive">{{status}}</div>          
                       </div>
-                     
                     </mat-card-content>
                 </mat-card>
               </form>

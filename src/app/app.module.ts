@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent} from './apex/menu/menu.component';
-
+import { CommonService} from './service/common.service';
 
 
 
@@ -31,7 +31,7 @@ import { MenuComponent} from './apex/menu/menu.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
