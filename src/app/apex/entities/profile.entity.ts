@@ -8,6 +8,4 @@ export class Profile {
     organizationname: String;
     workexperience: String;
     technolgies: String;
-
-
 }
