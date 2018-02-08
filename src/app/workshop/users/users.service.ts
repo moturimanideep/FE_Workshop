@@ -39,7 +39,7 @@ export class UserService extends CommonService {
       )
   }
 
-  getParam(key: string) {
+  getParam(key: string){
     return this.activatedroute.snapshot.queryParams[key];
   }
 

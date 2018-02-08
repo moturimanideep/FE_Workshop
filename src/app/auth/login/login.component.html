@@ -7,18 +7,17 @@
     </div>
     <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height:100vh;margin-right:60px;">
       <!-- class="row center-xs parent-container padding" -->
-      <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:32%;height:50%;">
+      <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:38%;height:50%;">
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutAlign="center center">
             <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="50">
-              <form novalidate autocomplete="off">
+              <form novalidate autocomplete="off" [formGroup]="UserDetailsForm">
                 <mat-card style="box-shadow: none;border-radius:16px;">
                   <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center end">
                       <h3 fxFlex="100" class="text-center" style="color:#1b80c3;padding-bottom: 24px;">
                         Login In
                       </h3>
-
                       <div fxLayout="row wrap" fxLayoutAlign="center end">
                         <mat-form-field fxFlex="100">
                           <input matInput placeholder="User Name or Email" required [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}">
@@ -28,13 +27,18 @@
                             [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}">
                         </mat-form-field>
                         <div fxLayout="row" fxLayoutAlign="start start">
-                          <a href="#">Reset Your Password ?</a>
+                          <a (click)="forgotpswd()">reset your password ?</a>
                         </div>
                         <div fxFlex="row" fxLayoutAlign="start start">
                           <div fxFlex="100" fxLayoutAlign="center center">
                             <button type="submit" mat-raised-button class="proceed-btn">
-                              PROCEED
+                              SignIn
                             </button>
+                          </div>
+                        </div>
+                        <div fxFlex="row" fxLayoutAlign="start start">
+                          <div fxFlex="100" fxLayoutAlign="center center">
+                            <a (click)="signup()">signup</a>
                           </div>
                         </div>
                       </div>

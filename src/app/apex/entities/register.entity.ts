@@ -5,6 +5,4 @@ export class Register {
     mobile: number;
     workingstatus: String;
     technologiesintrested: String;
-
-
 }

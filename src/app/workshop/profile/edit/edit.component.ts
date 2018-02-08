@@ -9,12 +9,19 @@ import { Profile } from '../../../apex/entities/profile.entity';
 export class EditComponent implements OnInit {
   myForm: FormGroup;
   user: any;
-  visible: any;
+  visible: any = false;
   constructor(private fb: FormBuilder) {
     this.user = new Profile();
     this.myForm = this.fb.group({
       name: [null, Validators.required],
-      email: [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(10)])]
+      email: [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(10)])],
+      city: [null, Validators.required],
+      college: [null, Validators.required],
+      specalization: [null, Validators.required],
+      yearofpass: [null, Validators.required],
+      organizationname:  [null, Validators.required],
+      workexperience: [null, Validators.required],
+      technolgies: [null, Validators.required]
   });
    }
 
