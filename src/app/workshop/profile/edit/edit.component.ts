@@ -11,6 +11,7 @@ export class EditComponent implements OnInit {
   user: any;
   visible: any = false;
   constructor(private fb: FormBuilder) {
+    
     this.user = new Profile();
     this.myForm = this.fb.group({
       name: [null, Validators.required],
@@ -29,6 +30,8 @@ export class EditComponent implements OnInit {
   }
   save(data: any) {
     console.log(data);
+    console.log(this.myForm);
+    
   }
   show(e) {
     if (e.target.checked) {

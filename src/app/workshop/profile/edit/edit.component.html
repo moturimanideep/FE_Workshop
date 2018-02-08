@@ -1,21 +1,25 @@
-<aside>
+<aside >
     <article>
       <mat-toolbar style="padding:0px">
         <h5>My Profile</h5>
       </mat-toolbar>
     </article>
-    <main>
-  
+    <main style="padding: 10px;">
+      <mat-card style="background-color: #eaf6ff;">
       <div class="padding-side">
-        <div class="container" style="background-color: #d7eefb;" >
-      <div class="row">
+        <div >
+      <div class="row color">
         <form [formGroup]="myForm" novalidate>
         <div class="col-md-12">
-            
-              <h2>Profile Photo</h2>
-          
+            <h3 style="color: #00426f;">Profile Photo</h3>
+            <div class="col-md-3 col-md-offset-right-9" style="margin-bottom: 20px;">
+              <mat-card style="height: 150px">
+
+              </mat-card>
+            </div>
         </div>
-        <div class="row">
+        <hr style=" width: 100%; background-color: #00426f; height: 2px; border: 0;">
+        <div class="row" style="padding: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -23,7 +27,7 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.name" formControlName="name" required >
-                        <span class="alert" *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
+                        <span *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
                             Name is required
                         </span>
                       </div>
@@ -36,7 +40,7 @@
                       </div>
                         <div class="col-md-6 col-md-offset-right-3">
                           <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
-                          <span class="alert" *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+                          <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
                               Email is required
                           </span>
                         </div>
@@ -44,7 +48,7 @@
     
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -52,7 +56,7 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.city" formControlName="city">
-                        <span class="alert" *ngIf="myForm.get('city').hasError('required') && myForm.get('city').touched">
+                        <span *ngIf="myForm.get('city').hasError('required') && myForm.get('city').touched">
                             City is required
                         </span>
                       </div>
@@ -65,7 +69,7 @@
                       </div>
                         <div class="col-md-6 col-md-offset-right-3">
                           <input type="text" class="form-control" [(ngModel)]="user.college" formControlName="college">
-                          <span class="alert" *ngIf="myForm.get('college').hasError('required') && myForm.get('college').touched">
+                          <span *ngIf="myForm.get('college').hasError('required') && myForm.get('college').touched">
                               College is required
                           </span>
                         </div>
@@ -73,7 +77,7 @@
     
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -81,7 +85,7 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.specalization" formControlName="specalization">
-                        <span class="alert" *ngIf="myForm.get('specalization').hasError('required') && myForm.get('specalization').touched">
+                        <span *ngIf="myForm.get('specalization').hasError('required') && myForm.get('specalization').touched">
                             Specalization is required
                         </span>
                       </div>
@@ -94,7 +98,7 @@
                       </div>
                         <div class="col-md-6 col-md-offset-right-3">
                           <input type="text" class="form-control" [(ngModel)]="user.yearofpass" formControlName="yearofpass">
-                          <span class="alert" *ngIf="myForm.get('yearofpass').hasError('required') && myForm.get('yearofpass').touched">
+                          <span *ngIf="myForm.get('yearofpass').hasError('required') && myForm.get('yearofpass').touched">
                               Year of pass is required
                           </span>
                         </div>
@@ -102,11 +106,11 @@
     
             </div>
         </div>
-        <div class="row">
-          <p>If you are an Employee <input type="checkbox" (change)="show($event)" ></p>
+        <div class="row" >
+          <p style="padding-left: 30px;">If you are an Employee <input type="checkbox" (change)="show($event)" ></p>
         </div>
         <div *ngIf="visible">
-        <div class="row">
+        <div class="row" style="padding: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -114,7 +118,7 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.organizationname" formControlName="organizationname">
-                        <span class="alert" *ngIf="myForm.get('organizationname').hasError('required') && myForm.get('organizationname').touched">
+                        <span *ngIf="myForm.get('organizationname').hasError('required') && myForm.get('organizationname').touched">
                             Organization Name is required
                         </span>
                       </div>
@@ -127,7 +131,7 @@
                       </div>
                         <div class="col-md-6 col-md-offset-right-3">
                           <input type="text" class="form-control" [(ngModel)]="user.workexperience" formControlName="workexperience">
-                          <span class="alert" *ngIf="myForm.get('workexperience').hasError('required') && myForm.get('workexperience').touched">
+                          <span *ngIf="myForm.get('workexperience').hasError('required') && myForm.get('workexperience').touched">
                               Work Experience is required
                           </span>
                         </div>
@@ -135,7 +139,7 @@
     
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding: 15px;">
             <div class="col-md-6 col-md-offset-right-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -143,7 +147,7 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.technolgies" formControlName="technolgies">
-                        <span class="alert" *ngIf="myForm.get('technolgies').hasError('required') && myForm.get('technolgies').touched">
+                        <span *ngIf="myForm.get('technolgies').hasError('required') && myForm.get('technolgies').touched">
                             Technolgies is required
                         </span>
                       </div>
@@ -151,8 +155,8 @@
             </div>
         </div>
       </div>
-        <div class="row">
-          <button class="btn btn-success" style="background-color: #00426f" (click)="save(user)">Save</button>
+        <div class="row save">
+          <button class="btn btn-success" style="background-color: #00426f" (click)="save(myForm)">Save</button>
         </div>
       </form>
     </div>
@@ -162,6 +166,7 @@
     
     </div>
       </div>
+    </mat-card>
     </main>
   </aside>
   
