@@ -28,21 +28,23 @@ export class LoginComponent implements OnInit {
   }
   Login(){
     var url="/api/login";
-    this.authService.login(url,this.login)
+    this.authService.login('http://35.231.75.213:3000/login',this.login)
         .subscribe(
             data => {
-               if(data.type == "success" && data.message.typeId == "UT4"){
-                localStorage.setItem("authToken",data.message.authToken);
-                this.router.navigate(['Admin']);
-               }
-               else if(data.type == "success" && data.message.typeId == "UT1"){
-                this.router.navigate(['Student']);
-               }
-               else{
-                 this.isActive = !this.isActive;
-                 this.status="Invalid Credentials";
-                 console.log("Invalid Credentials")
-               }
+              //  if(data.type == "success" && data.message.typeId == "UT4"){
+              //   localStorage.setItem("authToken",data.message.authToken);
+              //   this.router.navigate(['Admin']);
+              //  }
+              //  else if(data.type == "success" && data.message.typeId == "UT1"){
+              //   this.router.navigate(['Student']);
+              //  }
+              //  else{
+              //    this.isActive = !this.isActive;
+              //    this.status="Invalid Credentials";
+              //    console.log("Invalid Credentials")
+              //  }
+              console.log(data)
+              this.router.navigate(['workshop/userslist']);
             },
             error => {
                  console.log(error);

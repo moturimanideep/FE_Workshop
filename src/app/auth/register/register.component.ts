@@ -38,7 +38,10 @@ register: Register;
   ngOnInit() {
   }
   registerr(){
-    console.log(this.register);
+    this.authService.register('http://35.231.75.213:3000/register', this.register).subscribe((data)=>{
+      console.log(data);
+    })
   }
+
 
 }
