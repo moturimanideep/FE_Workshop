@@ -1,3 +1,130 @@
-<p >
-  edit works!
-</p>
+<div class="container" style="background-color: #d7eefb">
+    <div class="row">
+      <form [formGroup]="myForm" novalidate>
+      <div class="col-md-12">
+          
+            <h2>Profile Photo</h2>
+        
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-3">
+                    <label for="Name">Name:</label>
+                  </div>
+                    <div class="col-md-6 col-md-offset-right-3">
+                      <input type="text" class="form-control" [(ngModel)]="user.name" formControlName="name" required >
+                      <span class="alert" *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
+                          Name is required
+                      </span>
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label for="Name">Email:</label>
+                    </div>
+                      <div class="col-md-6 col-md-offset-right-3">
+                        <input type="text" class="form-control" >
+                      </div>
+                  </div>
+  
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-3">
+                    <label for="Name">City:</label>
+                  </div>
+                    <div class="col-md-6 col-md-offset-right-3">
+                      <input type="text" class="form-control" >
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label for="Name">College:</label>
+                    </div>
+                      <div class="col-md-6 col-md-offset-right-3">
+                        <input type="text" class="form-control" >
+                      </div>
+                  </div>
+  
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-3">
+                    <label for="Name">Specalization:</label>
+                  </div>
+                    <div class="col-md-6 col-md-offset-right-3">
+                      <input type="text" class="form-control" >
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label for="Name">Year of Pass:</label>
+                    </div>
+                      <div class="col-md-6 col-md-offset-right-3">
+                        <input type="text" class="form-control" >
+                      </div>
+                  </div>
+  
+          </div>
+      </div>
+      <div class="row">
+        <p>If you are an Employee <input type="checkbox" (change)="show($event)" []></p>
+      </div>
+      <div *ngIf="visible">
+      <div class="row">
+          <div class="col-md-6">
+                <div class="form-group row">
+                  <div class="col-md-3">
+                    <label for="Name">Organization Name:</label>
+                  </div>
+                    <div class="col-md-6 col-md-offset-right-3">
+                      <input type="text" class="form-control" >
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label for="Name">Work experience:</label>
+                    </div>
+                      <div class="col-md-6 col-md-offset-right-3">
+                        <input type="text" class="form-control" >
+                      </div>
+                  </div>
+  
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 col-md-offset-right-6">
+                <div class="form-group row">
+                  <div class="col-md-3">
+                    <label for="Name">Specalization:</label>
+                  </div>
+                    <div class="col-md-6 col-md-offset-right-3">
+                      <input type="text" class="form-control" >
+                    </div>
+                </div>
+          </div>
+      </div>
+    </div>
+      <div class="row">
+        <button class="btn btn-success" style="background-color: #00426f" (click)="save(user)">Save</button>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  
+  </div>
