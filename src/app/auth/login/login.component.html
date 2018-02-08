@@ -1,7 +1,10 @@
 <aside style="height:100vh">
   <main style="background: url(../../../assets/images/site-bg.png) no-repeat center center fixed; background-size: cover;">
     <h1 class="text-center" style="color:#fff">Full Stack Work Shop</h1>
-    <div style="position:absolute;top:48%;left:30px;"><h2 style="color:#fff">Digital Lync <br>Welcomes you to</h2></div>
+    <div style="position:absolute;top:48%;left:30px;">
+      <h2 style="color:#fff">Digital Lync
+        <br>Welcomes you to</h2>
+    </div>
     <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height:100vh;margin-right:60px;">
       <!-- class="row center-xs parent-container padding" -->
       <mat-card class="login-card padding-nill" style="position:fixed" style="border-radius: 8px;width:32%;height:50%;">
@@ -10,12 +13,12 @@
             <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="50">
               <form novalidate autocomplete="off" [formGroup]="UserDetailsForm">
                 <mat-card style="box-shadow: none;border-radius:16px;">
-                    <mat-card-content>
+                  <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center end">
                       <h3 fxFlex="100" class="text-center" style="color:#1b80c3;padding-bottom: 24px;">
                         Login In
                       </h3>
-                     
+
                       <div fxLayout="row wrap" fxLayoutAlign="center end">
                           <mat-form-field fxFlex="100">
                             <input matInput placeholder="User Name or Email" required [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}">
@@ -45,7 +48,9 @@
                         </div>  
                         <div class="status" *ngIf="isActive">{{status}}</div>          
                       </div>
-                    </mat-card-content>
+                      <div class="status" *ngIf="isActive">{{status}}</div>
+                    </div>
+                  </mat-card-content>
                 </mat-card>
               </form>
             </div>
