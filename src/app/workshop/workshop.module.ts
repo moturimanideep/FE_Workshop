@@ -1,3 +1,4 @@
+import { UserService } from './users/users.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,7 +10,6 @@ import { ViewComponent } from '../workshop/profile/view/view.component';
 import { UserprofileComponent } from '../workshop/users/userprofile/userprofile.component';
 import { UserslistComponent } from '../workshop/users/userslist/userslist.component';
 
-import { UsersService } from '../workshop/users/users.service';
 import { ProfileService } from '../workshop/profile/profile.service';
 
 const routes: Routes = [
@@ -32,6 +32,6 @@ const routes: Routes = [
     UserslistComponent
   ],
   exports: [RouterModule],
-  providers: [UsersService, ProfileService]
+  providers: [UserService, ProfileService]
 })
 export class WorkshopModule { }

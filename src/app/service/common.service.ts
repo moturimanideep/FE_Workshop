@@ -18,4 +18,5 @@ export class CommonService {
         localStorage.setItem("JNToken", token);
         localStorage.setItem("userName", userName);
     }
+
 }

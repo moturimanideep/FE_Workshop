@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map'
 import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import {AuthService} from '../auth.service';
-import {Login} from '../../apex/entities/login.entity'
+import {Login} from '../../apex/entities/login.entity';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

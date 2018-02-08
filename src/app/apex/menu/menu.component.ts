@@ -58,7 +58,7 @@ export class MenuComponent implements OnInit {
       {
         "id": 'PROFILES',
         "name": "profile",
-        "link": "workshop/userprofile",
+        "link": "workshop/view",
         "icon": "profile "
       }
     ]
