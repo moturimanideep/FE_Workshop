@@ -8,7 +8,7 @@
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutAlign="center center">
             <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="50">
-              <form novalidate autocomplete="off">
+              <form novalidate autocomplete="off" [formGroup]="UserDetailsForm">
                 <mat-card style="box-shadow: none;border-radius:16px;">
                     <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center end">
@@ -25,17 +25,23 @@
                               placeholder="Enter your password" [type]="hide ? 'text' : 'password'" type="password" [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}">
                           </mat-form-field>
                           <div fxLayout="row" fxLayoutAlign="start start">
-                            <a href="#">reset your password ?</a>
+                            <a (click)="forgotpswd()">reset your password ?</a>
                           </div>
                       
                 
                 <div fxFlex="row" fxLayoutAlign="start start">
                     <div fxFlex="100" fxLayoutAlign="center center">
                         <button type="submit" mat-raised-button class="proceed-btn" >
-                            Proceed
+                            SignIn
                         </button>
                     </div>
                 </div>
+                <div fxFlex="row" fxLayoutAlign="start start">
+                  <div fxFlex="100" fxLayoutAlign="center center">
+                    <a (click)="signup()">signup</a>
+                  </div>
+              </div>
+                
                         </div>  
                         <div class="status" *ngIf="isActive">{{status}}</div>          
                       </div>

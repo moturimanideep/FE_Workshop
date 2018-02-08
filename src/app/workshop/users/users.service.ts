@@ -38,10 +38,9 @@ export class UserService extends CommonService {
       }   
       )    
   }
-
   getParam(key: string){
     return this.activatedroute.snapshot.queryParams[key];
-}
+  }
 
 logout(): void {
   this.token = null;
