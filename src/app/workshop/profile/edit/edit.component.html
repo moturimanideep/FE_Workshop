@@ -83,7 +83,7 @@
                       <label for="Name">Specalization:</label>
                     </div>
                     <div class="col-md-6 col-md-offset-right-3">
-                      <input type="text" class="form-control" [(ngModel)]="user.Stream" formControlName="Stream">
+                      <input type="text" class="form-control" [(ngModel)]="user.stream" formControlName="Stream">
                       <span *ngIf="myForm.get('Stream').hasError('required') && myForm.get('Stream').touched">
                         Stream is required
                       </span>
