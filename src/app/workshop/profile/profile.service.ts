@@ -11,8 +11,6 @@ export class ProfileService {
   save(url, data): Observable<any> {
     return this.http.post(url, data)
       .map(response => {
-        let data = response.json();
-        console.log(data);
         return response.json()
       })
   }
@@ -22,7 +20,7 @@ export class ProfileService {
   getProfile(id){
     let host = 'http://35.231.75.213:3000/details/?id='+id;
     return this.http.get(host).map(response=>{
-      response.json();
+      return response.json();
     })
   }
   searchById(url){

@@ -1,7 +1,7 @@
 <aside>
     <article>
       <mat-toolbar style="padding:0px">
-        <h5 style="margin-left: 30px;">Manideep Moturi</h5>
+        <h5 style="margin-left: 30px;">My Profile</h5>
       </mat-toolbar>
     </article>
     <main class="padding">
@@ -16,35 +16,46 @@
               </mat-card>
           </div>
     </div>
-     
       <div class="padding-side">
           <mat-card class="margin-side">
-              <h3>Manideep Moturi</h3>
+              <h3 class="topic-title">{{profile.firstname}}</h3>
             <div fxLayout="row wrap">
               <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
                   <div class="hpair">
-                      <span>Name: </span>
-                      <span>Manideep Moturi</span>
+                      <span>First Name: </span>
+                      <span>{{profile.firstname}}</span>
                     </div>
                 <div class="hpair">
+                  <span>Last name: </span>
+                  <span>{{profile.lastname}}</span>
+                </div>
+                <div class="hpair">
                   <span>Email: </span>
-                  <span>mmoturi@digitallynctech.com</span>
+                  <span>{{profile.email}}</span>
                 </div>
                 <div class="hpair">
-                  <span>College: </span>
-                  <span>BITS PILANI</span>
+                    <span>College Name</span>
+                    <span>{{profile.collegeName}}</span>
                 </div>
                 <div class="hpair">
-                  <span>City: </span>
-                  <span>Hyderabad</span>
+                    <span>Designation</span>
+                    <span>{{profile.yearOfPassing}}</span>
                 </div>
                 <div class="hpair">
-                  <span>Working Status: </span>
-                  <span>Employee</span>
+                    <span>Stream</span>
+                    <span>{{profile.stream}}</span>
                 </div>
                 <div class="hpair">
-                    <span>Technology : </span>
-                    <span>Full Stack</span>
+                  <span>Interested Technolgoes</span>
+                  <span>{{profile.interstedTech}}</span>
+                </div>
+                <div class="hpair">
+                  <span>Company Name</span>
+                  <span>{{profile.companyName}}</span>
+                </div>
+                <div class="hpair">
+                    <span>Designation</span>
+                    <span>{{profile.workingOn}}</span>
                 </div>
                 <button type="submit" mat-raised-button class="proceed-btn" color="primary"  (click)="editProfile()">
                     Edit

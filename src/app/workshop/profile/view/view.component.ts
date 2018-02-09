@@ -19,8 +19,10 @@ export class ViewComponent implements OnInit {
   }
   getProfile(id:any){
     this.profileservice.getProfile(id).subscribe((data:any)=>{
-      this.profile = data.message;
-      console.log(data)
+      if(data){
+        this.profile = data.message;
+        console.log(data)
+      }
     })
   }
   editProfile(){
