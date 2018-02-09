@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   navMode = 'side';
   showMenu = true;
   sessionUser: any;
-  menuList: any[] = [];
   constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
    }
@@ -39,17 +38,8 @@ export class AppComponent implements OnInit {
             }
           }, 100)
         }
-        // this.menuLetter = this.sessionUser.name.charAt(0);
-        this.apexService.menuEmit(Storage.getMenuList());
-      }
-      
-    });
-    this._menuSubscription = this.apexService.menuEvent.subscribe(data => {
-      if(data) {
-        this.menuList = Object.assign([], data);
       }
     });
-
     if (window.innerWidth < 768) {
       this.navMode = 'over';
     } 
@@ -81,6 +71,5 @@ export class AppComponent implements OnInit {
     Storage.clearSession();
     sessionStorage.clear();
     this.apexService.sessionUserEmit(null);
-    this.appService.navigate('auth/login', []);
   }
 }

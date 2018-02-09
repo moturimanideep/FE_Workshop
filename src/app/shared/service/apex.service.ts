@@ -13,14 +13,8 @@ export class ApexService {
     constructor(private _domSanitizer: DomSanitizer, private _snackBarService: MatSnackBar ){
 
     }
-    showMessage(message: string){
-        this._snackBarService.open(message, 'x',{ duration: 3000 });
-    }
    sessionUserEmit (sessionUser: any) {
         this.sessionUserEvent.emit(sessionUser);
-    }
-    menuEmit(menu: any){
-         this.menuEvent.emit(menu);
     }
     bypassURL(url: string){
         return this._domSanitizer.bypassSecurityTrustResourceUrl(url);

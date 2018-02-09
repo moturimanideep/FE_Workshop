@@ -41,13 +41,13 @@ export class ReportService {
         });
     }
     errorMessage(err: ErrorMessage) {
-        if(err.message) {
-            this.apexService.showMessage(err.message);
-        } else if(err.code) {
-            this.apexService.showMessage(err.code);
-        } else {
-            this.apexService.showMessage(""+err);
-        }
+        // if(err.message) {
+        //     this.apexService.showMessage(err.message);
+        // } else if(err.code) {
+        //     this.apexService.showMessage(err.code);
+        // } else {
+        //     this.apexService.showMessage(""+err);
+        // }
         
     }
 }
