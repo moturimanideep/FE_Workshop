@@ -8,12 +8,12 @@
       <mat-card>
       <div class="padding-side">
           <div fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="30" fxFlex.lg="25" fxFlex.xl="25" class="padding">
-              <mat-card fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px" >
-                  <!-- <img-load fxFlex="100" [img]="profile.img.src ? profile.img.src : profile.img.id"></img-load>
-                  <P fxFlex="100" style="text-align:center;" class="btn-img">
-                      <img-crop (outputEvent)="outputEvent($event)"></img-crop>
-                  </P> -->
-              </mat-card>
+                <mat-card fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px;     padding: 0px;" >
+                        <img-load fxFlex="100" [img]="profile.image ? profile.image : profile.image"></img-load>
+                        <!-- <P fxFlex="100" style="text-align:center;" class="btn-img">
+                            <img-crop (outputEvent)="outputEvent($event)"></img-crop>
+                        </P> -->
+                    </mat-card>
           </div>
     </div>
       <div class="padding-side">

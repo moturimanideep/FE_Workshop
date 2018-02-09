@@ -32,7 +32,7 @@
                           <label for="Name">First Name:</label>
                         </div>
                         <div class="col-md-6 col-md-offset-right-3">
-                          <input type="text" class="form-control" [(ngModel)]="user.firstname" formControlName="firstname" required>
+                          <input type="text" class="form-control" [(ngModel)]="user.firstname" formControlName="firstname" required readonly>
                           <span *ngIf="myForm.get('firstname').hasError('required') && myForm.get('firstname').touched">
                             firstname is required
                           </span>
@@ -60,7 +60,7 @@
                           <label for="Name">Email:</label>
                         </div>
                         <div class="col-md-6 col-md-offset-right-3">
-                          <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
+                          <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email" readonly>
                           <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
                             Email is required
                           </span>
