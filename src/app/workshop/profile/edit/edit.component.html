@@ -13,7 +13,15 @@
               <div class="col-md-12">
                 <h3 style="color: #00426f;">Profile Photo</h3>
                 <div class="col-md-3" style="margin-bottom: 20px;">
-                  <mat-card style="height: 150px">
+                  <mat-card style="height: 213px;padding: 0px;" >
+                    <div>
+                      <img-load [img]="user.image ? user.image : user.image"></img-load>
+                    </div>
+                    <div>
+                      <p style="text-align:center;" class="btn-img">
+                          <img-crop (outputEvent)="outputEvent($event)"></img-crop>
+                      </p>
+                    </div>
                   </mat-card>
                 </div>
                 <div class="col-md-9">

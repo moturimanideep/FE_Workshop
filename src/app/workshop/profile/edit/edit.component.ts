@@ -56,5 +56,8 @@ export class EditComponent implements OnInit {
       this.visible = false;
     }
   }
+  outputEvent($event: any){
+    this.user.image = $event;
+  }
 
 }

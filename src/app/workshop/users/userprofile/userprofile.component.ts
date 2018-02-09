@@ -24,5 +24,7 @@ export class UserprofileComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  outputEvent($event: any){
+    this.profileData.image = $event;
+  }
 }

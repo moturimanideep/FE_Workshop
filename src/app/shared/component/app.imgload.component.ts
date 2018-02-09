@@ -13,7 +13,7 @@ const loadingImg = `data:image/svg+xml;base64,PCEtLSBCeSBTYW0gSGVyYmVydCAoQHNoZX
   selector: 'img-load',
   template: `
                 <div class="img-box">
-                 <img  alt="placeholder"  [src]="placeholder" height="100px" /> 
+                 <img  alt="placeholder"  [src]="placeholder" height="100px" style="border-radius:100%" /> 
                  </div>
             `,
   styles: [`.img-box {

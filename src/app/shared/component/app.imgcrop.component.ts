@@ -20,7 +20,7 @@ import {Component, Input, Output, EventEmitter, AfterViewInit} from '@angular/co
             <image-cropper id="cropper-image" class="full-width"
               [imageChangedEvent]="imageChangedEvent"
               [maintainAspectRatio]="true"
-              [aspectRatio]="21 / 9"
+              [aspectRatio]="1 / 1"
               [resizeToWidth]="320"
               format="png"
               (imageCropped)="imageCropped($event)"></image-cropper>
