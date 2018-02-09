@@ -13,14 +13,15 @@ import { Login } from '../../apex/entities/login.entity';
 })
 export class LoginComponent implements OnInit {
   status:any;
-  UserDetailsForm: any;
+  UserDetailsForm: FormGroup;
   login : Login = new Login;
-  isActive:boolean =false;
-  showServerError:String;
+  isActive: boolean = false;
+  showServerError: String;
+  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor( private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
     this.UserDetailsForm = this.formBuilder.group({
-      'password': ['', Validators.required],
-      'username': ['', Validators.required],
+      'email': ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      'password': ['',  Validators.compose([Validators.required, Validators.minLength(5)]],
      });
      this.authService.userLoginEmit();
   }

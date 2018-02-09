@@ -31,9 +31,11 @@ export class SetpasswordComponent implements OnInit {
   setpasswordd(){
     this.authService.register('http://35.231.75.213:3000/password', this.setpassword).subscribe((data)=>{
       console.log(data);
-      if(data){
+      if (data) {
         this.setPasswordSuccess = data.message;
-        this.router.navigate(['signin'])
+        setTimeout(() => {   
+          this.router.navigate(['signin']);
+         }, 2000);    
       }
     })
   }
