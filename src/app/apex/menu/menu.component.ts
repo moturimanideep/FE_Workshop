@@ -2,7 +2,9 @@ import { Component, OnInit, Input, SimpleChange } from '@angular/core';
 import { Menu } from './menu.interface';
 //import { ApexService } from '../../shared/service/apex.service';
 import { RouterLinkActive } from '@angular/router';
-
+import { Storage } from './../../shared/utils/storage';
+import { ApexService } from './../../shared/service/apex.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +18,7 @@ export class MenuComponent implements OnInit {
   states:any = {};
   @Input() inputData;
   
-  constructor() { 
+  constructor(private apexService: ApexService, private router: Router) { 
  
     this.states.activeItem = 'ADMIN_DASHBOARD';
     // this._menuSubscription = this.apexService.menuEvent.subscribe(data => {
@@ -51,16 +53,22 @@ export class MenuComponent implements OnInit {
     return [
       {
         "id": 'USERS',
-        "name": "users",
+        "name": "Users",
         "link": "workshop/userslist",
         "icon": "user_management"
       },
       {
         "id": 'PROFILES',
-        "name": "profile",
+        "name": "Profile",
         "link": "workshop/view",
-        "icon": "profile "
+        "icon": "profile"
       }
     ]
+  }
+  logout(){
+    Storage.clearSession();
+    sessionStorage.clear();
+    this.apexService.sessionUserEmit(null);
+    this.router.navigate(['auth/signin'])
   }
 }

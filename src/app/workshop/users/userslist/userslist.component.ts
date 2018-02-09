@@ -14,8 +14,8 @@ userList:any;
 
     this.userservice.userSearch('http://35.231.75.213:3000/users').subscribe((data)=>{
 
-      this.userList = data;
-      console.log(this.userList)
+      this.userList = data.message;
+      console.log(data)
     })
   }
 

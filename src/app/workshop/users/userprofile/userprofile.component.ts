@@ -12,10 +12,12 @@ export class UserprofileComponent implements OnInit {
   constructor(private userservice: UserService) {
     this.param = this.userservice.getParam('id');
     console.log(this.param)
-    this.userservice.searchById('http://35.231.75.213:3000/details?id=' + this.param).subscribe((data) => {
+    this.userservice.searchById('http://35.231.75.213:3000/details?id=' + this.param).subscribe((data:any) => {
       console.log(data)
-      this.profileData = data;
-      console.log(this.profileData);
+      if(data){
+        this.profileData = data.message;
+        console.log(this.profileData);
+      } 
     });
   }
 
