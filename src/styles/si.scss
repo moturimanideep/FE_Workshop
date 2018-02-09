@@ -5,7 +5,7 @@ html {
     touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow: scroll;
+    overflow: hidden;
     min-width: 320px;
 }
 
@@ -156,17 +156,8 @@ p {
     margin: 0 0 16px;
 }
 
-aside {
-    width: 100%;
-    height: calc(100vh - 60px);
-    top: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto;
-    overflow: scroll !important;
-    &#side{
+
+    #side{
         height: calc(100vh - 120px);
     }
     article {
@@ -224,7 +215,7 @@ aside {
             font-weight: bold;
         }
     }
-}
+
 .padding-side-1r{
     padding: 0px 1rem !important;
 }
