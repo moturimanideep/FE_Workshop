@@ -53,6 +53,7 @@
                           </div>
                         </div>
                       </div>
+                      <div class="status" *ngIf="showServerError">{{showServerError}}</div>
                       <div class="topic-title" *ngIf="registerSuccess">{{registerSuccess}}</div>
                     </div>
                   </mat-card-content>

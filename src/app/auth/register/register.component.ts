@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   RegistrationForm: any;
 register: Register;
 registerSuccess :any;
+showServerError:any
   workstatus = [
     {value: 'Employee', viewValue: 'Employee'},
     {value: 'Student', viewValue: 'Student'},
@@ -51,7 +52,11 @@ registerSuccess :any;
       this.router.navigate(['auth/signin'])
       }
       
-    })
+    },
+    error => {
+      console.log(error);
+      this.showServerError="OOPS! Something went wrong please try again"   
+ })
   }
 
 

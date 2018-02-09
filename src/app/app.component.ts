@@ -67,9 +67,4 @@ export class AppComponent implements OnInit {
           
         }
   }
-  logout(){
-    Storage.clearSession();
-    sessionStorage.clear();
-    this.apexService.sessionUserEmit(null);
-  }
 }

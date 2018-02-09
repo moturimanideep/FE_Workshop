@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
             },
             error => {
                  console.log(error);
-                 this.showServerError="Something went wrong please try again later"   
+                 this.showServerError="OOPS! Something went wrong please try again"   
             });
 }
 forgotpswd(){

@@ -1,11 +1,17 @@
 .reg-btn{
-    height: 50px;
-    border-radius: 2px;
-    background-color: #1b80c3;
-    font-size: 18px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
-  //   border-style: solid;
-    color: white;
-    position: relative;
-    // top:96px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #1b80c3;
+  font-size: 18px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
+//   border-style: solid;
+  color: white;
+  position: relative;
+  // top:96px;
+  width: 250px;
+  // margin-top:30px;
+}
+.status {
+  color: red;
+  font-style: bold;
 }

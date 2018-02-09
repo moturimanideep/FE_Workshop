@@ -31,6 +31,11 @@
                         </div>
                         <div fxFlex="row" fxLayoutAlign="start start">
                           <div fxFlex="100" fxLayoutAlign="center center">
+                            <a (click)="signup()">signup</a>
+                          </div>
+                        </div>
+                        <div fxFlex="row" fxLayoutAlign="start start">
+                          <div fxFlex="100" fxLayoutAlign="center center">
                             <button type="submit" mat-raised-button class="proceed-btn" (click)="Login()">
                               SignIn
                             </button>
@@ -38,11 +43,10 @@
                         </div>
                         <div fxFlex="row" fxLayoutAlign="start start">
                           <div fxFlex="100" fxLayoutAlign="center center">
-                            <a (click)="signup()">signup</a>
+                            <div class="status" *ngIf="showServerError">{{showServerError}}</div>
                           </div>
                         </div>
                       </div>
-                      <div class="status" *ngIf="isActive">{{status}}</div>
                     </div>
                   </mat-card-content>
                 </mat-card>
