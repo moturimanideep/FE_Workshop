@@ -9,6 +9,6 @@ export class Profile {
     workingOn: String;
     collegeName: String;
     yearOfPassing: String;
-    Stream: String;
+    stream: String;
 
 }

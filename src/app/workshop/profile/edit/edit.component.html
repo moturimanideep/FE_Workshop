@@ -31,8 +31,13 @@
                         <div class="col-md-4 ">
                           <label for="Name">First Name:</label>
                         </div>
+<<<<<<< HEAD
                         <div class="col-md-8 ">
                           <input type="text" class="form-control " [(ngModel)]="user.firstname" formControlName="firstname" required>
+=======
+                        <div class="col-md-6 col-md-offset-right-3">
+                          <input type="text" class="form-control" [(ngModel)]="user.firstname" formControlName="firstname" required readonly>
+>>>>>>> eb368d65ff5e14baf6838756b07ccbb529311177
                           <span *ngIf="myForm.get('firstname').hasError('required') && myForm.get('firstname').touched">
                             firstname is required
                           </span>
@@ -59,8 +64,13 @@
                         <div class="col-md-4 ">
                           <label for="Name">Email:</label>
                         </div>
+<<<<<<< HEAD
                         <div class="col-md-8">
                           <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
+=======
+                        <div class="col-md-6 col-md-offset-right-3">
+                          <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email" readonly>
+>>>>>>> eb368d65ff5e14baf6838756b07ccbb529311177
                           <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
                             Email is required
                           </span>
