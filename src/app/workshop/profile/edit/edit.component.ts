@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, ReactiveFormsModule, FormGroup, FormBuilder  } from '@angular/forms';
 import { Profile } from '../../../apex/entities/profile.entity';
+import { Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
 @Component({
   selector: 'app-edit',
@@ -12,32 +13,41 @@ export class EditComponent implements OnInit {
   user: any;
   visible: any = false;
   userDetails: any;
-  constructor(private fb: FormBuilder, private profileService: ProfileService) {
+  constructor(private fb: FormBuilder, private router: Router, private profileService: ProfileService) {
     
     this.user = new Profile();
+    this.getProfile(this.profileService.getCurrentProfileId());
     this.myForm = this.fb.group({
-      name: [null, Validators.required],
+      firstname: [null, Validators.required],
+      lastname: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(10)])],
-      city: [null, Validators.required],
-      college: [null, Validators.required],
-      specalization: [null, Validators.required],
-      yearofpass: [null, Validators.required]
-      // organizationname:  [null, Validators.required],
-      // workexperience: [null, Validators.required],
-      // technolgies: [null, Validators.required]
-  });
-   }
-
+      collegeName: [null, Validators.required],
+      Stream: [null, Validators.required],
+      yearOfPassing: [null, Validators.required],
+      companyName:  [null],
+      designation: [null],
+      workingOn: [null],
+      interstedTech:[null]
+    });
+  }
   ngOnInit() {
   }
-  save(data: any) {
+  getProfile(id:any){
+    this.profileService.getProfile(id).subscribe((data:any)=>{
+      if(data){
+        this.user = data.message;
+        console.log(data)
+      }
+    })
+  }
+  save() {
+    console.log(this.user)
+    this.profileService.save(this.user).subscribe((data:any)=>{
 
-    const url = '';
-    this.userDetails = data;
-    this.profileService.save(url, this.userDetails);
-    console.log(data);
-    console.log(this.myForm);
-    
+      if(data){
+        this.router.navigate(['myProfile'])
+      }
+    })  
   }
   show(e) {
     if (e.target.checked) {

@@ -8,11 +8,10 @@ import { AppService } from '../../shared/service/app.service';
 @Injectable()
 export class ProfileService {
   constructor(private http: Http, private router: Router, private activatedroute: ActivatedRoute, private appService: AppService) { }
-  save(url, data): Observable<any> {
-    return this.http.post(url, data)
+  save(data): Observable<any> {
+    let host = 'http://35.231.75.213:3000/update';
+    return this.http.post(host, data)
       .map(response => {
-        let data = response.json();
-        console.log(data);
         return response.json()
       })
   }
@@ -20,9 +19,9 @@ export class ProfileService {
     return Storage.getSessionUser().message._id;
   }
   getProfile(id){
-    let host = 'http://35.231.75.213:3000/profile/'+id;
+    let host = 'http://35.231.75.213:3000/details/?id='+id;
     return this.http.get(host).map(response=>{
-      response.json();
+      return response.json();
     })
   }
   searchById(url){

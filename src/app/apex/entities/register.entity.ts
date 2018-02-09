@@ -3,6 +3,6 @@ export class Register {
     lastname: String;
     email: String;
     mobile: number;
+    interstedTech: String;
     workingstatus: String;
-    technologiesintrested: String;
 }

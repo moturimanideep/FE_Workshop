@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
             });
 }
 forgotpswd(){
-  this.router.navigate(['auth/setpassword'])
+  this.router.navigate(['setpassword'])
   }
 signup(){
-  this.router.navigate(['auth/register'])
+  this.router.navigate(['register'])
 }
 }

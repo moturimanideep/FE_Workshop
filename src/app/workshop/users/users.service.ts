@@ -51,12 +51,11 @@ export class UserService extends CommonService {
   userSearch(url): Observable<any> {
     return this.http.get(url)
       .map(res => res.json())
-
   }
 
   searchById(url){
     return this.http.get(url).map(response=>{
-      response.json();
+      return response.json();
     })
   }
 }

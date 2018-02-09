@@ -1,7 +1,7 @@
 <aside>
   <article>
     <mat-toolbar style="padding:0px">
-      <h5 style="margin-left: 30px;">Dillikar Tharun</h5>
+      <h5 style="margin-left: 30px;">Users Profile</h5>
     </mat-toolbar>
   </article>
   <main class="padding">
@@ -16,36 +16,49 @@
             </mat-card>
         </div>
   </div>
-   
+
     <div class="padding-side">
         <mat-card class="margin-side">
-            <h3>Tharun Dillikar</h3>
+            <h3 class="topic-title">{{profileData.firstname}}</h3>
           <div fxLayout="row wrap">
             <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
                 <div class="hpair">
-                    <span>Name: </span>
-                    <span>Tharun Dillikar</span>
+                    <span>First Name: </span>
+                    <span>{{profileData.firstname}}</span>
                   </div>
               <div class="hpair">
+                <span>Last name: </span>
+                <span>{{profileData.lastname}}</span>
+              </div>
+              <div class="hpair">
                 <span>Email: </span>
-                <span></span>
+                <span>{{profileData.email}}</span>
               </div>
               <div class="hpair">
-                <span>College: </span>
-                <span>SRM University</span>
+                  <span>College Name</span>
+                  <span>{{profileData.collegeName}}</span>
               </div>
               <div class="hpair">
-                <span>City: </span>
-                <span>Hyderabad</span>
+                  <span>Designation</span>
+                  <span>{{profileData.yearOfPassing}}</span>
               </div>
               <div class="hpair">
-                <span>Working Status: </span>
-                <span>Employee</span>
+                  <span>Stream</span>
+                  <span>{{profileData.stream}}</span>
               </div>
               <div class="hpair">
-                  <span>Technology : </span>
-                  <span>Full Stack</span>
-                </div>
+                <span>Interested Technolgoes</span>
+                <span>{{profileData.interstedTech}}</span>
+              </div>
+              <div class="hpair">
+                <span>Company Name</span>
+                <span>{{profileData.companyName}}</span>
+              </div>
+              <div class="hpair">
+                  <span>Designation</span>
+                  <span>{{profileData.workingOn}}</span>
+              </div>
+             
             </div>
           </div>
   
