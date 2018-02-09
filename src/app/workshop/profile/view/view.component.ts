@@ -13,7 +13,7 @@ import {Profile} from './../../../apex/entities/profile.entity';
 export class ViewComponent implements OnInit {
   profile:Profile = new Profile();
   constructor(private router: Router, private profileservice:ProfileService) { 
-    this.getProfile(this.profileservice.getCurrentProfileId();
+    this.getProfile(this.profileservice.getCurrentProfileId());
   }
   ngOnInit() {
   }
