@@ -24,7 +24,7 @@ export class ViewComponent implements OnInit {
     })
   }
   editProfile(){
-    this.router.navigate(['profile-edit']);
+    this.router.navigate(['myProfile-edit']);
   }
 
 }

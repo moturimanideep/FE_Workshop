@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../users.service';
+import {Profile} from './../../../apex/entities/profile.entity';
 
 @Component({
   selector: 'app-userprofile',
@@ -8,12 +9,12 @@ import { UserService } from './../users.service';
 })
 export class UserprofileComponent implements OnInit {
   param: any;
-  profileData:any;
+  profileData:Profile = new Profile;
   constructor(private userservice: UserService) {
     this.param = this.userservice.getParam('id');
     console.log(this.param)
     this.userservice.searchById('http://35.231.75.213:3000/details?id=' + this.param).subscribe((data:any) => {
-      console.log(data)
+      console.log(data);
       if(data){
         this.profileData = data.message;
         console.log(this.profileData);

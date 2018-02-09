@@ -23,7 +23,7 @@ userList:any;
   }
   userprofile(item){
     console.log(item._id)
-    this.router.navigate(['workshop/userprofile'], {queryParams: {id:item._id}});
+    this.router.navigate(['userprofile'], {queryParams: {id:item._id}});
   }
 
 

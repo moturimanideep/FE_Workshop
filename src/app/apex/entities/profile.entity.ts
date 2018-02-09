@@ -1,11 +1,14 @@
 export class Profile {
-    name: String;
+    firstname: String;
+    lastname: String
     email: String;
-    city: String;
-    college: String;
-    specalization: String;
-    yearofpass: String;
-    organizationname: String;
-    workexperience: String;
-    technolgies: String;
+    image:String;
+    interstedTech: String;
+    companyName: String;
+    designation: string;
+    workingOn: String;
+    collegeName: String;
+    yearOfPassing: String;
+    Stream: String;
+
 }

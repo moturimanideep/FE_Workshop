@@ -16,18 +16,18 @@ export class EditComponent implements OnInit {
     
     this.user = new Profile();
     this.myForm = this.fb.group({
-      name: [null, Validators.required],
+      firstname: [null, Validators.required],
+      lastname: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(10)])],
-      city: [null, Validators.required],
-      college: [null, Validators.required],
-      specalization: [null, Validators.required],
-      yearofpass: [null, Validators.required]
-      // organizationname:  [null, Validators.required],
-      // workexperience: [null, Validators.required],
-      // technolgies: [null, Validators.required]
-  });
-   }
-
+      collegeName: [null, Validators.required],
+      Stream: [null, Validators.required],
+      yearOfPassing: [null, Validators.required],
+      companyName:  [null],
+      designation: [null],
+      workingOn: [null],
+      interstedTech:[null]
+    });
+  }
   ngOnInit() {
   }
   save(data: any) {
@@ -39,7 +39,7 @@ export class EditComponent implements OnInit {
     console.log(this.myForm);
     
   }
-  show(e) {
+  show(e) {debugger;
     if (e.target.checked) {
       this.visible = true;
     } else {

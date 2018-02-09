@@ -20,7 +20,7 @@ export class ProfileService {
     return Storage.getSessionUser().message._id;
   }
   getProfile(id){
-    let host = 'http://35.231.75.213:3000/profile/'+id;
+    let host = 'http://35.231.75.213:3000/details/?id='+id;
     return this.http.get(host).map(response=>{
       response.json();
     })
