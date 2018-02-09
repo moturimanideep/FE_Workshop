@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, ReactiveFormsModule, FormGroup, FormBuilder  } from '@angular/forms';
 import { Profile } from '../../../apex/entities/profile.entity';
+import { Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
 @Component({
   selector: 'app-edit',
@@ -12,9 +13,10 @@ export class EditComponent implements OnInit {
   user: any;
   visible: any = false;
   userDetails: any;
-  constructor(private fb: FormBuilder, private profileService: ProfileService) {
+  constructor(private fb: FormBuilder, private router: Router, private profileService: ProfileService) {
     
     this.user = new Profile();
+    this.getProfile(this.profileService.getCurrentProfileId());
     this.myForm = this.fb.group({
       firstname: [null, Validators.required],
       lastname: [null, Validators.required],
@@ -30,16 +32,22 @@ export class EditComponent implements OnInit {
   }
   ngOnInit() {
   }
-  save(data: any) {
-
-    const url = '';
-    this.userDetails = data;
-    this.profileService.save(url, this.userDetails);
-    console.log(data);
-    console.log(this.myForm);
-    
+  getProfile(id:any){
+    this.profileService.getProfile(id).subscribe((data:any)=>{
+      if(data){
+        this.user = data.message;
+        console.log(data)
+      }
+    })
   }
-  show(e) {debugger;
+  save() {
+    this.profileService.save(this.user).subscribe((data:any)=>{
+      if(data){
+        this.router.navigate(['myProfile'])
+      }
+    })  
+  }
+  show(e) {
     if (e.target.checked) {
       this.visible = true;
     } else {
