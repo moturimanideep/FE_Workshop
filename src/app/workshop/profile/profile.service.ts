@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProfileService {
   constructor(private http: Http, private router: Router, private activatedroute: ActivatedRoute) { }
-  login(url, data): Observable<any> {
+  save(url, data): Observable<any> {
     return this.http.post(url, data)
       .map(response => {
         let data = response.json();
