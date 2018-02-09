@@ -41,7 +41,9 @@ export class EditComponent implements OnInit {
     })
   }
   save() {
+    console.log(this.user)
     this.profileService.save(this.user).subscribe((data:any)=>{
+
       if(data){
         this.router.navigate(['myProfile'])
       }
