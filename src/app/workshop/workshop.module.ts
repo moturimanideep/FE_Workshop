@@ -13,10 +13,10 @@ import { UserslistComponent } from '../workshop/users/userslist/userslist.compon
 import { ProfileService } from '../workshop/profile/profile.service';
 
 const routes: Routes = [
-  { path: 'workshop/edit', component: EditComponent},
-  { path: 'workshop/view', component: ViewComponent },
-  { path: 'workshop/userprofile', component: UserprofileComponent },
-  { path: 'workshop/userslist', component: UserslistComponent }
+  { path: 'myProfile-edit', component: EditComponent},
+  { path: 'myProfile', component: ViewComponent },
+  { path: 'userprofile', component: UserprofileComponent },
+  { path: 'userslist', component: UserslistComponent }
 ];
 
 @NgModule({

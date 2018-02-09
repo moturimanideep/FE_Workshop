@@ -14,9 +14,9 @@ import  { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'auth/signin', component: LoginComponent },
-  { path: 'auth/register', component: RegisterComponent },
-  { path: 'auth/setpassword', component: SetpasswordComponent }
+  { path: 'signin', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'setpassword', component: SetpasswordComponent }
 ];
 
 

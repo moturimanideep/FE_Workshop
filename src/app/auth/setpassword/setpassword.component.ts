@@ -33,7 +33,7 @@ export class SetpasswordComponent implements OnInit {
       console.log(data);
       if(data){
         this.setPasswordSuccess = data.message;
-        this.router.navigate(['auth/signin'])
+        this.router.navigate(['signin'])
       }
     })
   }

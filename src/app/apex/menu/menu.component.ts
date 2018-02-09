@@ -54,13 +54,13 @@ export class MenuComponent implements OnInit {
       {
         "id": 'USERS',
         "name": "Users",
-        "link": "workshop/userslist",
+        "link": "userslist",
         "icon": "user_management"
       },
       {
         "id": 'PROFILES',
-        "name": "Profile",
-        "link": "workshop/view",
+        "name": "My Profile",
+        "link": "myProfile",
         "icon": "profile"
       }
     ]
@@ -69,6 +69,6 @@ export class MenuComponent implements OnInit {
     Storage.clearSession();
     sessionStorage.clear();
     this.apexService.sessionUserEmit(null);
-    this.router.navigate(['auth/signin'])
+    this.router.navigate(['signin'])
   }
 }

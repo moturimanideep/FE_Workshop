@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
             data => {
               console.log(data)
               this.authService.storageSave(data);
-              this.router.navigate(['workshop/userslist']);
+              this.router.navigate(['userslist']);
             },
             error => {
                  console.log(error);

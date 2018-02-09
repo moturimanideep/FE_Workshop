@@ -49,7 +49,7 @@ showServerError:any
       if(data){
       console.log(data);
       this.registerSuccess = data.message;
-      this.router.navigate(['auth/signin'])
+      this.router.navigate(['signin'])
       }
       
     },
