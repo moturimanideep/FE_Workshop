@@ -20,7 +20,13 @@ a {
 .outline-none {
     outline: none;
 }
-
+.topic-title {
+    font-weight: bold;
+    color: #4285f4 !important;
+}
+.captilize{
+    text-transform: capitalize;
+}
 .center {
     position: absolute;
     top: 50%;

@@ -4,13 +4,15 @@ import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { CommonService } from '../service/common.service';
+import { Storage }from '../shared/utils/storage';
+import { AppService } from '../shared/service/app.service';
 
 @Injectable()
 export class AuthService extends CommonService {
   baseUrl: string;
   userDetails: any;
   token: string;
-  constructor(private http: Http, private router: Router, private activatedroute: ActivatedRoute) {
+  constructor(private http: Http, private router: Router, private activatedroute: ActivatedRoute, private appService: AppService) {
     super();
 
   }
@@ -19,14 +21,16 @@ export class AuthService extends CommonService {
       .map(response => {
         let data = response.json();
         console.log(data);
-        // this.userDetails = data.message;
-        // this.setToken(data.message.authToken, data.message.userName);
         return response.json()
       })
   }
   getUserDetails() {
     return this.userDetails;
   }
+  userLoginEmit() {
+    this.appService.sessionClear();
+    this.appService.sessionUserEmit(null);
+}
   register(url, data): Observable<any> {
     console.log(data);
     return this.http.post(url, data )
@@ -36,6 +40,13 @@ export class AuthService extends CommonService {
       }   
       )    
   }
+  storageSave(data: any){
+    if(data) {
+        Storage.setSessionUser(data);
+        this.appService.sessionUserEmit(data);
+  }
+ }
+
 logout(): void {
   this.token = null;
   localStorage.removeItem('currentUser');

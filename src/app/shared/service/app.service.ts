@@ -63,6 +63,7 @@ export class AppService {
         this.apexService.showMessage(message);
     }
     sessionUserEmit(data: any){
+        console.log(data);
         this.apexService.sessionUserEmit(data);
     }
     menuEmit(data: any){

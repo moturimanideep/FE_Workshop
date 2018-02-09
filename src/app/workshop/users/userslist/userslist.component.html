@@ -5,33 +5,33 @@
     </mat-toolbar>
   </article>
   <main>
-
-    <div class="padding-side">
-      <mat-card class="margin-side" *ngFor="let item of userList" (click)="userprofile(item)">
-          <h3>{{item.firstname}}</h3>
-        <div fxLayout="row wrap">
-          <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
-            <div class="hpair">
-              <span>Email: </span>
-              <span>{{item.email}}</span>
-            </div>
-            <div class="hpair">
-              <span>Mobile: </span>
-              <span>{{item.mobile}}</span>
-            </div>
-            <div class="hpair">
-              <span>City: </span>
-              <span>Hyderabad</span>
-            </div>
-            <div class="hpair">
-              <span>Technology: </span>
-              <span>{{item.technology}}</span>
+    <div fxLayout="row wrap">
+      <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25" style="padding:4px" *ngFor="let item of userList">
+        <mat-card class="margin-side" class="course-card" (click)="userprofile(item)" style="cursor:pointer;  height:248px">
+          <h3 class="topic-title captilize">{{item.firstname}}</h3>
+          <div fxLayout="row wrap">
+            <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
+              <div class="hpair">
+                <span>Email: </span>
+                <span>{{item.email}}</span>
+              </div>
+              <div class="hpair">
+                <span>Mobile: </span>
+                <span>{{item.mobile}}</span>
+              </div>
+              <div class="hpair">
+                <span>City: </span>
+                <span>Hyderabad</span>
+              </div>
+              <div class="hpair">
+                <span>Technology: </span>
+                <span>{{item.technology}}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-      </mat-card>
-
+        </mat-card>
+      </div>
     </div>
   </main>
 </aside>

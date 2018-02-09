@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
       'password': ['', Validators.required],
       'username': ['', Validators.required],
      });
+     this.authService.userLoginEmit();
   }
 
   ngOnInit() {
@@ -31,19 +32,8 @@ export class LoginComponent implements OnInit {
     this.authService.login('http://35.231.75.213:3000/login',this.login)
         .subscribe(
             data => {
-              //  if(data.type == "success" && data.message.typeId == "UT4"){
-              //   localStorage.setItem("authToken",data.message.authToken);
-              //   this.router.navigate(['Admin']);
-              //  }
-              //  else if(data.type == "success" && data.message.typeId == "UT1"){
-              //   this.router.navigate(['Student']);
-              //  }
-              //  else{
-              //    this.isActive = !this.isActive;
-              //    this.status="Invalid Credentials";
-              //    console.log("Invalid Credentials")
-              //  }
               console.log(data)
+              this.authService.storageSave(data);
               this.router.navigate(['workshop/userslist']);
             },
             error => {

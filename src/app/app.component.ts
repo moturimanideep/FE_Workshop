@@ -19,27 +19,18 @@ export class AppComponent implements OnInit {
   private _menuSubscription: any;
   concat:string;
   @ViewChild('sidenav') sidenav: MatSidenav;
-  menuLetter: string = 'A';
   navMode = 'side';
   showMenu = true;
   sessionUser: any;
-  username : String;
-  concatString : any = '';
   menuList: any[] = [];
   constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
    }
 
   ngOnInit() {
-    this._loaderSubscription = this.apexService.loaderEvent.subscribe(data => {
-      if (data != this.showLoader) {
-        setTimeout( ()=>{
-          this.showLoader = data;
-        }, 100)
-      }
-    });
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       this.sessionUser = Storage.getSessionUser();
+      console.log(this.sessionUser);
       if(this.sessionUser){
         if(this.navMode == 'over'){
           setTimeout( ()=>{
@@ -48,7 +39,7 @@ export class AppComponent implements OnInit {
             }
           }, 100)
         }
-        this.menuLetter = this.sessionUser.name.charAt(0);
+        // this.menuLetter = this.sessionUser.name.charAt(0);
         this.apexService.menuEmit(Storage.getMenuList());
       }
       

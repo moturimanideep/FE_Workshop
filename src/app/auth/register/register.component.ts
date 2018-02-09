@@ -15,15 +15,20 @@ import { Register } from '../../apex/entities/register.entity';
 export class RegisterComponent implements OnInit {
   RegistrationForm: any;
 register: Register;
+registerSuccess :any;
   workstatus = [
     {value: 'Employee', viewValue: 'Employee'},
     {value: 'Student', viewValue: 'Student'},
     {value: 'Others', viewValue: 'Others'}
   ];
   technologies = [
-    {value: 'Front End ', viewValue: 'Front End'},
+    {value: 'Front End', viewValue: 'Front End'},
     {value: 'Devops', viewValue: 'Devops'},
-    
+    {value: 'Full Stack', viewValue: 'Full Stack'},
+    {value: 'Python', viewValue: 'Python'},
+    {value: 'Gaming', viewValue: 'Gaming'},
+    {value: 'Design', viewValue: 'Design'},
+    {value: 'Digital Marketing', viewValue: 'Digital Marketing'},
   ];
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
     this.register = new Register();
@@ -33,13 +38,19 @@ register: Register;
       'email': ['', Validators.required],
       'mobile': ['', Validators.required],
      });
+     this.authService.userLoginEmit();
   }
 
   ngOnInit() {
   }
   registerr(){
     this.authService.register('http://35.231.75.213:3000/register', this.register).subscribe((data)=>{
+      if(data){
       console.log(data);
+      this.registerSuccess = data.message;
+      this.router.navigate(['auth/signin'])
+      }
+      
     })
   }
 
