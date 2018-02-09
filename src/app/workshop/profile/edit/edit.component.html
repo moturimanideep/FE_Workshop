@@ -12,72 +12,79 @@
         <form [formGroup]="myForm" novalidate>
         <div class="col-md-12">
             <h3 style="color: #00426f;">Profile Photo</h3>
-            <div class="col-md-3 col-md-offset-right-9" style="margin-bottom: 20px;">
+            <div class="col-md-3" style="margin-bottom: 20px;">
               <mat-card style="height: 150px">
 
               </mat-card>
             </div>
+            <div class="col-md-9">
+              <div class="row" style="padding: 15px;">
+                <div class="col-md-6">
+                      <div class="form-group row">
+                        <div class="col-md-3">
+                          <label for="Name">Name:</label>
+                        </div>
+                          <div class="col-md-6 col-md-offset-right-3">
+                            <input type="text" class="form-control" [(ngModel)]="user.name" formControlName="name" required >
+                            <span *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
+                                Name is required
+                            </span>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-md-3">
+                            <label for="Name">Email:</label>
+                          </div>
+                            <div class="col-md-6 col-md-offset-right-3">
+                              <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
+                              <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+                                  Email is required
+                              </span>
+                            </div>
+                        </div>
+        
+                </div>
+            </div>
+            <div class="row" style="padding: 15px;">
+              <div class="col-md-6">
+                    <div class="form-group row">
+                      <div class="col-md-3">
+                        <label for="Name">City:</label>
+                      </div>
+                        <div class="col-md-6 col-md-offset-right-3">
+                          <input type="text" class="form-control" [(ngModel)]="user.city" formControlName="city">
+                          <span *ngIf="myForm.get('city').hasError('required') && myForm.get('city').touched">
+                              City is required
+                          </span>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-md-6">
+                      <div class="form-group row">
+                        <div class="col-md-3">
+                          <label for="Name">College:</label>
+                        </div>
+                          <div class="col-md-6 col-md-offset-right-3">
+                            <input type="text" class="form-control" [(ngModel)]="user.college" formControlName="college">
+                            <span *ngIf="myForm.get('college').hasError('required') && myForm.get('college').touched">
+                                College is required
+                            </span>
+                          </div>
+                      </div>
+      
+              </div>
+          </div>
+
+            </div>
         </div>
+        
+
         <hr style=" width: 100%; background-color: #00426f; height: 2px; border: 0;">
-        <div class="row" style="padding: 15px;">
-            <div class="col-md-6">
-                  <div class="form-group row">
-                    <div class="col-md-3">
-                      <label for="Name">Name:</label>
-                    </div>
-                      <div class="col-md-6 col-md-offset-right-3">
-                        <input type="text" class="form-control" [(ngModel)]="user.name" formControlName="name" required >
-                        <span *ngIf="myForm.get('name').hasError('required') && myForm.get('name').touched">
-                            Name is required
-                        </span>
-                      </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                    <div class="form-group row">
-                      <div class="col-md-3">
-                        <label for="Name">Email:</label>
-                      </div>
-                        <div class="col-md-6 col-md-offset-right-3">
-                          <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
-                          <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
-                              Email is required
-                          </span>
-                        </div>
-                    </div>
-    
-            </div>
-        </div>
-        <div class="row" style="padding: 15px;">
-            <div class="col-md-6">
-                  <div class="form-group row">
-                    <div class="col-md-3">
-                      <label for="Name">City:</label>
-                    </div>
-                      <div class="col-md-6 col-md-offset-right-3">
-                        <input type="text" class="form-control" [(ngModel)]="user.city" formControlName="city">
-                        <span *ngIf="myForm.get('city').hasError('required') && myForm.get('city').touched">
-                            City is required
-                        </span>
-                      </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                    <div class="form-group row">
-                      <div class="col-md-3">
-                        <label for="Name">College:</label>
-                      </div>
-                        <div class="col-md-6 col-md-offset-right-3">
-                          <input type="text" class="form-control" [(ngModel)]="user.college" formControlName="college">
-                          <span *ngIf="myForm.get('college').hasError('required') && myForm.get('college').touched">
-                              College is required
-                          </span>
-                        </div>
-                    </div>
-    
-            </div>
-        </div>
-        <div class="row" style="padding: 15px;">
+       
+        
+        <div class="row" style="padding-left: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -110,7 +117,7 @@
           <p style="padding-left: 30px;">If you are an Employee <input type="checkbox" (change)="show($event)" ></p>
         </div>
         <div *ngIf="visible">
-        <div class="row" style="padding: 15px;">
+        <div class="row" style="padding-left: 15px;">
             <div class="col-md-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -118,9 +125,9 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.organizationname" formControlName="organizationname">
-                        <span *ngIf="myForm.get('organizationname').hasError('required') && myForm.get('organizationname').touched">
+                        <!-- <span *ngIf="myForm.get('organizationname').hasError('required') && myForm.get('organizationname').touched">
                             Organization Name is required
-                        </span>
+                        </span> -->
                       </div>
                   </div>
             </div>
@@ -131,15 +138,15 @@
                       </div>
                         <div class="col-md-6 col-md-offset-right-3">
                           <input type="text" class="form-control" [(ngModel)]="user.workexperience" formControlName="workexperience">
-                          <span *ngIf="myForm.get('workexperience').hasError('required') && myForm.get('workexperience').touched">
+                          <!-- <span *ngIf="myForm.get('workexperience').hasError('required') && myForm.get('workexperience').touched">
                               Work Experience is required
-                          </span>
+                          </span> -->
                         </div>
                     </div>
     
             </div>
         </div>
-        <div class="row" style="padding: 15px;">
+        <div class="row" style="padding-left: 15px;">
             <div class="col-md-6 col-md-offset-right-6">
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -147,9 +154,9 @@
                     </div>
                       <div class="col-md-6 col-md-offset-right-3">
                         <input type="text" class="form-control" [(ngModel)]="user.technolgies" formControlName="technolgies">
-                        <span *ngIf="myForm.get('technolgies').hasError('required') && myForm.get('technolgies').touched">
+                        <!-- <span *ngIf="myForm.get('technolgies').hasError('required') && myForm.get('technolgies').touched">
                             Technolgies is required
-                        </span>
+                        </span> -->
                       </div>
                   </div>
             </div>
