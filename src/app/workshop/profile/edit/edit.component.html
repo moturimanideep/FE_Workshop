@@ -24,61 +24,60 @@
                     </div>
                   </mat-card>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 profile-details">
                   <div class="row" style="padding: 15px;">
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <div class="col-md-3">
+                    <div class="col-md-6 form-group">
+                     
+                        <div class="col-md-4 ">
                           <label for="Name">First Name:</label>
                         </div>
-                        <div class="col-md-6 col-md-offset-right-3">
-                          <input type="text" class="form-control" [(ngModel)]="user.firstname" formControlName="firstname" required>
+                        <div class="col-md-8 ">
+                          <input type="text" class="form-control " [(ngModel)]="user.firstname" formControlName="firstname" required>
                           <span *ngIf="myForm.get('firstname').hasError('required') && myForm.get('firstname').touched">
                             firstname is required
                           </span>
                         </div>
-                      </div>
+                    
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <div class="col-md-3">
+                    <div class="col-md-6 form-group">
+                     
+                        <div class="col-md-4 ">
                           <label for="Name">Last Name:</label>
                         </div>
-                        <div class="col-md-6 col-md-offset-right-3">
+                        <div class="col-md-8 ">
                           <input type="text" class="form-control" [(ngModel)]="user.lastname" formControlName="lastname">
                           <span *ngIf="myForm.get('lastname').hasError('required') && myForm.get('lastname').touched">
                             Lastname is required
                           </span>
                         </div>
-                      </div>
+                    
                     </div>
                   </div>
                   <div class="row" style="padding: 15px;">
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <div class="col-md-3">
+                    <div class="col-md-6 form-group">
+                   
+                        <div class="col-md-4 ">
                           <label for="Name">Email:</label>
                         </div>
-                        <div class="col-md-6 col-md-offset-right-3">
+                        <div class="col-md-8">
                           <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email">
                           <span *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
                             Email is required
                           </span>
                         </div>
-                      </div>
+                   
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <div class="col-md-3">
+                    <div class="col-md-6 form-group">
+                        <div class="col-md-4">
                           <label for="Name">College:</label>
                         </div>
-                        <div class="col-md-6 col-md-offset-right-3">
+                        <div class="col-md-8">
                           <input type="text" class="form-control" [(ngModel)]="user.collegeName" formControlName="collegeName">
                           <span *ngIf="myForm.get('collegeName').hasError('required') && myForm.get('collegeName').touched">
                             collegeName is required
                           </span>
                         </div>
-                      </div>
+                  
                     </div>
                   </div>
                 </div>
