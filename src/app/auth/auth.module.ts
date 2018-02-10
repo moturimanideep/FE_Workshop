@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../auth/login/login.component';
 import { RegisterComponent } from '../auth/register/register.component';
 import { SetpasswordComponent } from '../auth/setpassword/setpassword.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -28,7 +28,9 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot(routes, { useHash: true }),
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     LoginComponent,

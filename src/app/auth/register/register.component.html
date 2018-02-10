@@ -11,35 +11,53 @@
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutAlign="center center">
             <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="50">
-              <form novalidate autocomplete="off">
+              <form novalidate autocomplete="off" [formGroup]="RegistrationForm">
                 <mat-card style="box-shadow: none;border-radius:16px;">
                   <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center end">
                       <h3 fxFlex="100" class="text-center" style="color:#1b80c3;padding-bottom: 24px;">
-                        Registartion Form
+                        Registration Form
                       </h3>
                       <div fxLayout="row wrap" fxLayoutAlign="center end">
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="First Name" required [(ngModel)]="register.firstname" [ngModelOptions]="{standalone: true}">
+                          <input matInput placeholder="First Name" required [(ngModel)]="register.firstname" formControlName="firstName">
                         </mat-form-field>
+                        <span class="error" *ngIf="RegistrationForm.get('firstName').touched && RegistrationForm.get('firstName').hasError('required')">
+                          First Name required
+                        </span>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Last Name" required [(ngModel)]="register.lastname" [ngModelOptions]="{standalone: true}">
+                          <input matInput placeholder="Last Name" required [(ngModel)]="register.lastname" formControlName="lastname">
                         </mat-form-field>
+                        <span class="error" *ngIf="RegistrationForm.get('lastname').touched && RegistrationForm.get('lastname').hasError('required')">
+                          Last Name required
+                        </span>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Email" required [(ngModel)]="register.email" [ngModelOptions]="{standalone: true}">
+                          <input matInput placeholder="Email" required [(ngModel)]="register.email" formControlName="email">
                         </mat-form-field>
+                        <span class="error" *ngIf="RegistrationForm.get('email').touched && RegistrationForm.get('email').hasError('required')">
+                          Email required
+                        </span>
+                        <span class="error" *ngIf="RegistrationForm.get('email').touched && RegistrationForm.get('email').hasError('pattern')">
+                          Enter valid Email
+                        </span>
                         <mat-form-field fxFlex="100">
-                          <input matInput placeholder="Mobile" required [(ngModel)]="register.mobile" [ngModelOptions]="{standalone: true}">
+                          <input matInput placeholder="Mobile" required [(ngModel)]="register.mobile" formControlName="mobile">
                         </mat-form-field>
+                        <span class="error" *ngIf="RegistrationForm.get('mobile').touched && RegistrationForm.get('mobile').hasError('required')">
+                          Mobile No required
+                        </span>
+                        <span class="error" *ngIf="RegistrationForm.get('mobile').touched && RegistrationForm.get('mobile').hasError('pattern')">
+                          Enter valid Mobile No
+                        </span>
                         <mat-form-field fxFlex="100">
-                          <mat-select placeholder="Work Status" [(ngModel)]="register.workingstatus" [ngModelOptions]="{standalone: true}">
+                          <mat-select placeholder="Work Status" [(ngModel)]="register.workingstatus" formControlName="workingstatus">
                             <mat-option *ngFor="let status of workstatus" [value]="status.value">
                               {{ status.viewValue }}
                             </mat-option>
                           </mat-select>
                         </mat-form-field>
                         <mat-form-field fxFlex="100">
-                          <mat-select placeholder="Technologies Intrested"  [(ngModel)]="register.interstedTech" [ngModelOptions]="{standalone: true}">
+                          <mat-select placeholder="Technologies Intrested"  [(ngModel)]="register.interstedTech" formControlName="interstedTech" >
                             <mat-option *ngFor="let technology of technologies" [value]="technology.value">
                               {{ technology.viewValue }}
                             </mat-option>

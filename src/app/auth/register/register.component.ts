@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
-import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { AuthService } from '../auth.service';
 import { Register } from '../../apex/entities/register.entity';
@@ -13,10 +13,13 @@ import { Register } from '../../apex/entities/register.entity';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  RegistrationForm: any;
+
+RegistrationForm: FormGroup;
 register: Register;
 registerSuccess: any;
 showServerError: any;
+emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+mobilePattern = '[0-9]*';
   workstatus = [
     {value: 'Employee', viewValue: 'Employee'},
     {value: 'Student', viewValue: 'Student'},
@@ -34,10 +37,12 @@ showServerError: any;
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
     this.register = new Register();
       this.RegistrationForm = this.formBuilder.group({
-      'firstname': ['', Validators.required],
-      'username': ['', Validators.required],
-      'email': ['', Validators.required],
-      'mobile': ['', Validators.required],
+      'firstName': ['', Validators.required],
+      'lastname': ['', Validators.required],
+      'email': ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      'mobile': ['', [Validators.required, Validators.pattern(this.mobilePattern)]],
+      'workingstatus': [''],
+      'interstedTech': ['']
      });
      this.authService.userLoginEmit();
   }
