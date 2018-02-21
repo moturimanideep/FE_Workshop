@@ -29,8 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   Login(){
-    var url="/api/login";
-    this.authService.login('http://35.231.75.213:3000/login',this.login)
+    this.authService.login(this.login)
         .subscribe(
             data => {
               console.log(data)

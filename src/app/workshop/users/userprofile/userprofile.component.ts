@@ -8,12 +8,12 @@ import {Profile} from './../../../apex/entities/profile.entity';
   styleUrls: ['./userprofile.component.scss']
 })
 export class UserprofileComponent implements OnInit {
-  param: any;
+  paramId: any;
   profileData:Profile = new Profile;
   constructor(private userservice: UserService) {
-    this.param = this.userservice.getParam('id');
-    console.log(this.param)
-    this.userservice.searchById('http://35.231.75.213:3000/details?id=' + this.param).subscribe((data:any) => {
+    this.paramId = this.userservice.getParam('id');
+    console.log(this.paramId)
+    this.userservice.searchById(this.paramId).subscribe((data:any) => {
       console.log(data);
       if(data){
         this.profileData = data.message;

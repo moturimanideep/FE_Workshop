@@ -50,7 +50,7 @@ mobilePattern = '[0-9]*';
   ngOnInit() {
   }
   registerr() {
-    this.authService.register('http://35.231.75.213:3000/register', this.register).subscribe((data) => {
+    this.authService.register(this.register).subscribe((data) => {
       if (data) {
       console.log(data);
       this.registerSuccess = data.message;

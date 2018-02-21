@@ -12,8 +12,7 @@ export class UserslistComponent implements OnInit {
 userList:any;
   constructor(private router: Router, private userservice:UserService) { 
 
-    this.userservice.userSearch('http://35.231.75.213:3000/users').subscribe((data)=>{
-
+    this.userservice.userSearch().subscribe((data)=>{
       this.userList = data.message;
       console.log(data)
     })

@@ -6,9 +6,12 @@ import 'rxjs/add/operator/map';
 import { CommonService } from '../service/common.service';
 import { Storage }from '../shared/utils/storage';
 import { AppService } from '../shared/service/app.service';
+import { Props } from '../apex/common/props'
 
 @Injectable()
 export class AuthService extends CommonService {
+  private host = Props.API_END_POINT;
+  private url: string = '';
   baseUrl: string;
   userDetails: any;
   token: string;
@@ -16,8 +19,9 @@ export class AuthService extends CommonService {
     super();
 
   }
-  login(url, data): Observable<any> {
-    return this.http.post(url, data)
+  login(data): Observable<any> {
+    this.url = this.host + "login";
+    return this.http.post(this.url, data)
       .map(response => {
         let data = response.json();
         console.log(data);
@@ -31,9 +35,18 @@ export class AuthService extends CommonService {
     this.appService.sessionClear();
     this.appService.sessionUserEmit(null);
 }
-  register(url, data): Observable<any> {
-    console.log(data);
-    return this.http.post(url, data )
+  register(data): Observable<any> {
+    this.url = this.host + "register";
+    return this.http.post(this.url, data )
+      .map(response =>{
+           response.json();
+         return response.json()
+      }   
+      )    
+  }
+  setPassword(data): Observable<any> {
+    this.url = this.host + "password";
+    return this.http.post(this.url, data )
       .map(response =>{
            response.json();
          return response.json()

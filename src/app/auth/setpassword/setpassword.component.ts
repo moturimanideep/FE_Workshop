@@ -29,7 +29,7 @@ export class SetpasswordComponent implements OnInit {
   ngOnInit() {
   }
   setpasswordd(){
-    this.authService.register('http://35.231.75.213:3000/password', this.setpassword).subscribe((data)=>{
+    this.authService.setPassword(this.setpassword).subscribe((data)=>{
       console.log(data);
       if (data) {
         this.setPasswordSuccess = data.message;
