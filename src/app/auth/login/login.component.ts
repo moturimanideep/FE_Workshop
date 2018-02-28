@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       'password': ['',  Validators.compose([Validators.required, Validators.minLength(5)])]
      });
      this.authService.userLoginEmit();
+     this.getDummyList();
   }
 
   ngOnInit() {
@@ -46,5 +47,10 @@ forgotpswd(){
   }
 signup(){
   this.router.navigate(['register'])
+}
+getDummyList(){
+  this.authService.getDummyServer().subscribe(result=>{
+    console.log(result);
+  })
 }
 }

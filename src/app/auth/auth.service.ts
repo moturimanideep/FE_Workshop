@@ -67,4 +67,12 @@ logout(): void {
 getParam(key: string){
   return this.activatedroute.snapshot.queryParams[key];
 }
+getDummyServer():Observable<any>{
+  return this.http.get('https://jsonplaceholder.typicode.com/posts',)
+  .map(res =>{
+    console.log(res);
+    res.json();
+    return res.json()
+  })
+}
 }
