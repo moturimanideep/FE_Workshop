@@ -41,8 +41,7 @@ export class AuthService extends CommonService {
       .map(response =>{
            response.json();
          return response.json()
-      }   
-      )    
+      })    
   }
   setPassword(data): Observable<any> {
     this.url = this.host + "password";

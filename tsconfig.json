@@ -17,6 +17,10 @@
     ]
 
   },
+  "angularCompilerOptions": {
+    "genDir": "./dist/ngfactory",
+    "entryModule": "./src/app/app.module#AppModule"
+},
   "include": [
     "src/**/*",
     "node_modules/agm-direction/src/agm-direction.module.ts"
